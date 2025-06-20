@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Hub - Your Ultimate Manga & Manhwa Destination</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Manga<span>Hub</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="manga.html"><i class="fas fa-book"></i> Manga</a></li>
+                <li><a href="manhwa.html"><i class="fas fa-book-open"></i> Manhwa</a></li>
+                <li><a href="popular.html"><i class="fas fa-fire"></i> Popular</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="payment.html" class="premium-btn"><i class="fas fa-shopping-cart"></i> Buy Manga</a></li>
+                <li><a href="login.html" class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a href="signup.html" class="signup-btn"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="slider">
+                <!-- One Piece Slide -->
+                <div class="slide">
+                    <img src="egg.jpg" alt="One Piece Egghead Arc">
+                    <div class="slide-content">
+                        <h2>One Piece: Egghead Arc</h2>
+                        <p>Join Luffy and the Straw Hats in their latest adventure on Egghead Island!</p>
+                    </div>
+                </div>
+
+                <!-- Demon Slayer Slide -->
+                <div class="slide">
+                    <img src="ds.jpg" alt="Demon Slayer">
+                    <div class="slide-content">
+                        <h2>Demon Slayer</h2>
+                        <p>Follow Tanjiro's journey in the critically acclaimed series!</p>
+                    </div>
+                </div>
+
+                <!-- Solo Leveling Slide -->
+                <div class="slide">
+                    <img src="sll.jpg" alt="Solo Leveling">
+                    <div class="slide-content">
+                        <h2>Solo Leveling</h2>
+                        <p>Experience the rise of Sung Jin-Woo in this epic manhwa!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Navigation -->
+            <div class="slider-nav">
+                <button class="prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="slider-dots"></div>
+                <button class="next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="featured">
+            <h2>Featured Titles</h2>
+            <div class="featured-container">
+                <div class="featured-card">
+                    <div class="card-image">
+                        <img src="op.webp" alt="One Piece">
+                        <div class="card-overlay">
+                            <span class="rating"><i class="fas fa-star"></i> 9.8</span>
+                            <span class="chapters">1051 Chapters</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>One Piece</h3>
+                        <p class="genres">Adventure, Action, Fantasy</p>
+                        <p class="description">Follow Monkey D. Luffy and his pirate crew in their grand adventure to find the greatest treasure ever left by the legendary Pirate, Gold Roger. The famous mystery treasure named "One Piece".</p>
+                        <div class="card-actions">
+                            <button class="read-btn"><i class="fas fa-book-reader"></i> Read Now</button>
+                            <button class="add-list-btn"><i class="fas fa-plus"></i> Add to List</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <div class="card-image">
+                        <img src="sl.jpg" alt="Solo Leveling">
+                        <div class="card-overlay">
+                            <span class="rating"><i class="fas fa-star"></i> 9.5</span>
+                            <span class="chapters">179 Chapters</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Solo Leveling</h3>
+                        <p class="genres">Action, Adventure, Fantasy</p>
+                        <p class="description">In a world where hunters must battle deadly monsters to protect humanity, Sung Jin-Woo, the weakest of ranked hunters, finds himself in a mysterious dungeon that changes his life forever.</p>
+                        <div class="card-actions">
+                            <button class="read-btn"><i class="fas fa-book-reader"></i> Read Now</button>
+                            <button class="add-list-btn"><i class="fas fa-plus"></i> Add to List</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <div class="card-image">
+                        <img src="aot.jpg" alt="Attack on Titan">
+                        <div class="card-overlay">
+                            <span class="rating"><i class="fas fa-star"></i> 9.7</span>
+                            <span class="chapters">139 Chapters</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Attack on Titan</h3>
+                        <p class="genres">Action, Dark Fantasy, Post-apocalyptic</p>
+                        <p class="description">In a world where humanity lives inside cities surrounded by enormous walls due to the Titans, gigantic humanoid creatures who devour humans seemingly without reason.</p>
+                        <div class="card-actions">
+                            <button class="read-btn"><i class="fas fa-book-reader"></i> Read Now</button>
+                            <button class="add-list-btn"><i class="fas fa-plus"></i> Add to List</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-card">
+                    <div class="card-image">
+                        <img src="tog.jpg" alt="Tower of God">
+                        <div class="card-overlay">
+                            <span class="rating"><i class="fas fa-star"></i> 9.4</span>
+                            <span class="chapters">550 Chapters</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Tower of God</h3>
+                        <p class="genres">Fantasy, Adventure, Mystery</p>
+                        <p class="description">Follow Bam as he enters the mysterious Tower, chasing after his only friend Rachel, and discovers the hidden secrets and challenges each floor holds.</p>
+                        <div class="card-actions">
+                            <button class="read-btn"><i class="fas fa-book-reader"></i> Read Now</button>
+                            <button class="add-list-btn"><i class="fas fa-plus"></i> Add to List</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Genres Section -->
+        <section class="genres">
+            <h2>Browse by Genre</h2>
+            <div class="category-container">
+                <div class="category-type">
+                    <h2>Popular Manga</h2>
+                    <div class="category-grid">
+                        <div class="category">
+                            <img src="op.webp" alt="One Piece">
+                            <h3>One Piece</h3>
+                            <div class="category-actions">
+                                <button class="read-now"><i class="fas fa-book-reader"></i> Read Now</button>
+                                <button class="add-list"><i class="fas fa-plus"></i> Add to List</button>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <img src="ds.webp" alt="Demon Slayer">
+                            <h3>Demon Slayer</h3>
+                            <div class="category-actions">
+                                <button class="read-now"><i class="fas fa-book-reader"></i> Read Now</button>
+                                <button class="add-list"><i class="fas fa-plus"></i> Add to List</button>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <img src="bserserk.jpg" alt="Berserk">
+                            <h3>Berserk</h3>
+                            <div class="category-actions">
+                                <button class="read-now"><i class="fas fa-book-reader"></i> Read Now</button>
+                                <button class="add-list"><i class="fas fa-plus"></i> Add to List</button>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <img src="bleach.jpg" alt="Bleach">
+                            <h3>Bleach</h3>
+                            <div class="category-actions">
+                                <button class="read-now"><i class="fas fa-book-reader"></i> Read Now</button>
+                                <button class="add-list"><i class="fas fa-plus"></i> Add to List</button>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <img src="dbzbig.webp" alt="Dragon Ball">
+                            <h3>Dragon Ball</h3>
+                            <div class="category-actions">
+                                <button class="read-now"><i class="fas fa-book-reader"></i> Read Now</button>
+                                <button class="add-list"><i class="fas fa-plus"></i> Add to List</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-type">
+                    <h2>Popular Manhwa</h2>
+                    <div class="category-grid">
+                        <div class="category">
+                            <img src="sl.jpg" alt="Solo Leveling">
+                            <h3>Solo Leveling</h3>
+                            <div class="category-actions">
+                                <button class="read-now"><i class="fas fa-book-reader"></i> Read Now</button>
+                                <button class="add-list"><i class="fas fa-plus"></i> Add to List</button>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <img src="tog.jpg" alt="Tower of God">
+                            <h3>Tower of God</h3>
+                            <div class="category-actions">
+                                <button class="read-now"><i class="fas fa-book-reader"></i> Read Now</button>
+                                <button class="add-list"><i class="fas fa-plus"></i> Add to List</button>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <img src="lookism.jpg" alt="Lookism">
+                            <h3>Lookism</h3>
+                            <div class="category-actions">
+                                <button class="read-now"><i class="fas fa-book-reader"></i> Read Now</button>
+                                <button class="add-list"><i class="fas fa-plus"></i> Add to List</button>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <img src="tbeat.jpg" alt="The Beginning After The End">
+                            <h3>The Beginning After The End</h3>
+                            <div class="category-actions">
+                                <button class="read-now"><i class="fas fa-book-reader"></i> Read Now</button>
+                                <button class="add-list"><i class="fas fa-plus"></i> Add to List</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Updates Section -->
+        <section class="latest-section">
+            <div class="container">
+                <h2>Latest Updates</h2>
+                <div class="manga-grid">
+                    <!-- Latest Item 1 -->
+                    <div class="manga-card">
+                        <img src="bleach.jpg" alt="Bleach">
+                        <div class="manga-info">
+                            <h3>Bleach</h3>
+                            <p>Chapter 686</p>
+                        </div>
+                    </div>
+                    <!-- Latest Item 2 -->
+                    <div class="manga-card">
+                        <img src="tog.jpg" alt="Tower of God">
+                        <div class="manga-info">
+                            <h3>Tower of God</h3>
+                            <p>Chapter 550</p>
+                        </div>
+                    </div>
+                    <!-- Latest Item 3 -->
+                    <div class="manga-card">
+                        <img src="sl.jpg" alt="Solo Leveling">
+                        <div class="manga-info">
+                            <h3>Solo Leveling</h3>
+                            <p>Chapter 179</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Information -->
+        <section class="additional-info">
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>100% Secure Payments</h3>
+                    <p>All payment transactions are encrypted and secure</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-truck"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Free shipping on orders above ₹499</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-undo"></i>
+                    <h3>Easy Returns</h3>
+                    <p>10-day return policy on all items</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Get help anytime via chat or phone</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Manga Hub</h3>
+                <p>Your ultimate destination for premium manga and manhwa content.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#manga">Manga</a></li>
+                    <li><a href="#manhwa">Manhwa</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Manga Hub. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 

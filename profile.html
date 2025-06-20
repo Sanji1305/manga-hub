@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - MangaHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/cursor-effect.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Manga<span>Hub</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="manga.html"><i class="fas fa-book"></i> Manga</a></li>
+                <li><a href="manhwa.html"><i class="fas fa-book-open"></i> Manhwa</a></li>
+                <li><a href="popular.html"><i class="fas fa-fire"></i> Popular</a></li>
+                <li><a href="genres.html"><i class="fas fa-tags"></i> Genres</a></li>
+                <li><a href="latest.html"><i class="fas fa-clock"></i> Latest</a></li>
+                <li><a href="payment.html" class="premium-btn"><i class="fas fa-shopping-cart"></i> Buy Manga</a></li>
+                <li><a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#" id="logoutBtn" class="signup-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img id="userAvatar" src="assets/images/default-avatar.png" alt="User Avatar">
+                </div>
+                <div class="profile-info">
+                    <h2 id="username">Username</h2>
+                    <p id="userEmail">user@example.com</p>
+                    <p id="userBio" class="user-bio">No bio added yet.</p>
+                    <button class="edit-profile-btn">Edit Profile</button>
+                </div>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat-box">
+                    <h3>Reading List</h3>
+                    <span id="readingCount">0</span>
+                </div>
+                <div class="stat-box">
+                    <h3>Completed</h3>
+                    <span id="completedCount">0</span>
+                </div>
+                <div class="stat-box">
+                    <h3>Favorites</h3>
+                    <span id="favoritesCount">0</span>
+                </div>
+            </div>
+
+            <div class="profile-content">
+                <div class="content-section">
+                    <h3>Currently Reading</h3>
+                    <div id="readingList" class="manga-grid">
+                        <!-- Reading list items will be dynamically added here -->
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>Favorite Manga/Manhwa</h3>
+                    <div id="favoritesList" class="manga-grid">
+                        <!-- Favorites will be dynamically added here -->
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>Reading History</h3>
+                    <div id="historyList" class="history-list">
+                        <!-- Reading history will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="editProfileForm" class="edit-profile-form">
+                <div class="form-group">
+                    <label for="editUsername">Username</label>
+                    <input type="text" id="editUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="editEmail">Email</label>
+                    <input type="email" id="editEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="editAvatar">Profile Picture</label>
+                    <input type="file" id="editAvatar" name="avatar" accept="image/*">
+                    <div class="avatar-preview">
+                        <img id="avatarPreview" src="" alt="Avatar Preview">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="editBio">Bio</label>
+                    <textarea id="editBio" name="bio" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editPassword">New Password (leave blank to keep current)</label>
+                    <input type="password" id="editPassword" name="password">
+                </div>
+                <div class="form-group">
+                    <label for="editConfirmPassword">Confirm New Password</label>
+                    <input type="password" id="editConfirmPassword" name="confirmPassword">
+                </div>
+                <div class="form-group preferences">
+                    <h3>Reading Preferences</h3>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="prefManga" name="preferences" value="manga">
+                            Manga
+                        </label>
+                        <label>
+                            <input type="checkbox" id="prefManhwa" name="preferences" value="manhwa">
+                            Manhwa
+                        </label>
+                        <label>
+                            <input type="checkbox" id="prefManhua" name="preferences" value="manhua">
+                            Manhua
+                        </label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="save-profile-btn">Save Changes</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your ultimate destination for manga and manhwa content.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#manga">Manga</a></li>
+                    <li><a href="#manhwa">Manhwa</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MangaHub. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="profile.js"></script>
+    <script src="js/cursor-effect.js"></script>
+</body>
+</html> 

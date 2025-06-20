@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Manga - Manga Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="styles/cursor-effect.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+        <div class="logo">
+            <h1>Manga<span>Hub</span></h1>
+        </div>
+        <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="manga.html"><i class="fas fa-book"></i> Manga</a></li>
+                <li><a href="manhwa.html"><i class="fas fa-book-open"></i> Manhwa</a></li>
+                <li><a href="popular.html"><i class="fas fa-fire"></i> Popular</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="payment.html" class="premium-btn active"><i class="fas fa-shopping-cart"></i> Buy Manga</a></li>
+                <li><a href="login.html" class="login-btn"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                <li><a href="signup.html" class="signup-btn"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main class="payment-page">
+        <!-- Shop Header -->
+        <section class="payment-header">
+            <h1>Buy Your Favorite Manga</h1>
+            <p>Official licensed manga volumes with worldwide shipping</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for manga volumes...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </section>
+
+        <!-- Manga Selection -->
+        <section class="manga-shop">
+            <div class="filters">
+                <div class="filter-group">
+                    <h3>Sort By</h3>
+                    <select id="sortBy">
+                        <option value="popularity">Popularity</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <h3>Genre</h3>
+                    <div class="genre-filters">
+                        <label><input type="checkbox" value="action"> Action</label>
+                        <label><input type="checkbox" value="adventure"> Adventure</label>
+                        <label><input type="checkbox" value="fantasy"> Fantasy</label>
+                        <label><input type="checkbox" value="romance"> Romance</label>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3>Price Range</h3>
+                    <div class="price-range">
+                        <input type="range" min="0" max="2000" value="1000" id="priceRange">
+                        <div class="price-inputs">
+                            <input type="number" value="0" min="0" max="2000" id="minPrice">
+                            <span>to</span>
+                            <input type="number" value="2000" min="0" max="2000" id="maxPrice">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="manga-grid">
+                <!-- One Piece Volume -->
+                <div class="manga-item">
+                    <div class="manga-image">
+                        <img src="op.webp" alt="One Piece Volume 100">
+                        <div class="manga-overlay">
+                            <span class="stock-badge in-stock">In Stock</span>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="manga-info">
+                        <h3>One Piece Vol. 100</h3>
+                        <p class="author">By Eiichiro Oda</p>
+                        <div class="manga-meta">
+                            <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                            <span class="reviews">(2.5k reviews)</span>
+                        </div>
+                        <div class="price-info">
+                            <div class="price">₹499</div>
+                            <div class="original-price">₹599</div>
+                            <div class="discount">17% OFF</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="buy-now-btn">Buy Now</button>
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demon Slayer Volume -->
+                <div class="manga-item">
+                    <div class="manga-image">
+                        <img src="ds.jpg" alt="Demon Slayer Volume 1">
+                        <div class="manga-overlay">
+                            <span class="stock-badge in-stock">In Stock</span>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="manga-info">
+                        <h3>Demon Slayer Vol. 1</h3>
+                        <p class="author">By Koyoharu Gotouge</p>
+                        <div class="manga-meta">
+                            <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                            <span class="reviews">(1.8k reviews)</span>
+                        </div>
+                        <div class="price-info">
+                            <div class="price">₹449</div>
+                            <div class="original-price">₹549</div>
+                            <div class="discount">18% OFF</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="buy-now-btn">Buy Now</button>
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attack on Titan Volume -->
+                <div class="manga-item">
+                    <div class="manga-image">
+                        <img src="aot.jpg" alt="Attack on Titan Volume 1">
+                        <div class="manga-overlay">
+                            <span class="stock-badge in-stock">In Stock</span>
+                            <button class="quick-view"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="manga-info">
+                        <h3>Attack on Titan Vol. 1</h3>
+                        <p class="author">By Hajime Isayama</p>
+                        <div class="manga-meta">
+                            <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                            <span class="reviews">(3.2k reviews)</span>
+                        </div>
+                        <div class="price-info">
+                            <div class="price">₹399</div>
+                            <div class="original-price">₹499</div>
+                            <div class="discount">20% OFF</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="buy-now-btn">Buy Now</button>
+                            <button class="add-to-cart-btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jujutsu Kaisen Volume -->
+                
+            </div>
+        </section>
+
+        <!-- Shopping Cart -->
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span class="subtotal">₹0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping:</span>
+                    <span class="shipping">₹50</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span class="total-amount">₹0</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+
+        <!-- Payment Modal -->
+        <div class="modal" id="paymentModal">
+            <div class="modal-content payment">
+                <span class="close-modal">&times;</span>
+                <h2>Complete Your Purchase</h2>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="order-items">
+                        <!-- Order items will be dynamically added here -->
+                    </div>
+                    <div class="order-total">
+                        <span>Total Amount:</span>
+                        <span id="totalAmount">₹499</span>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <h3>Select Payment Method</h3>
+                    
+                    <!-- UPI Section -->
+                    <div class="payment-category">
+                        <h4>UPI</h4>
+                        <div class="payment-grid">
+                            <button class="payment-option" data-payment="googlepay">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Pay_Logo_%282020%29.svg/1200px-Google_Pay_Logo_%282020%29.svg.png" alt="Google Pay">
+                                <span>Google Pay</span>
+                            </button>
+                            <button class="payment-option" data-payment="phonepe">
+                                <img src="https://download.logo.wine/logo/PhonePe/PhonePe-Logo.wine.png" alt="PhonePe">
+                                <span>PhonePe</span>
+                            </button>
+                            <button class="payment-option" data-payment="paytm">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paytm_Logo_%28standalone%29.svg/2560px-Paytm_Logo_%28standalone%29.svg.png" alt="Paytm">
+                                <span>Paytm</span>
+                            </button>
+                            <button class="payment-option" data-payment="bhim">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/1200px-UPI-Logo-vector.svg.png" alt="BHIM UPI">
+                                <span>BHIM UPI</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Cards Section -->
+                    <div class="payment-category">
+                        <h4>Credit/Debit Cards</h4>
+                        <div class="payment-grid">
+                            <button class="payment-option" data-payment="visa">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa">
+                                <span>Visa</span>
+                            </button>
+                            <button class="payment-option" data-payment="mastercard">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png" alt="Mastercard">
+                                <span>Mastercard</span>
+                            </button>
+                            <button class="payment-option" data-payment="amex">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" alt="American Express">
+                                <span>Amex</span>
+                            </button>
+                            <button class="payment-option" data-payment="rupay">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Rupay-Logo.png/1200px-Rupay-Logo.png" alt="RuPay">
+                                <span>RuPay</span>
+                            </button>
+                        </div>
+                        <div class="card-form" style="display: none;">
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry">Expiry Date</label>
+                                    <input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="password" id="cvv" placeholder="123" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Net Banking Section -->
+                    <div class="payment-category">
+                        <h4>Net Banking</h4>
+                        <div class="payment-grid">
+                            <button class="payment-option" data-payment="sbi">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/2560px-SBI-logo.svg.png" alt="SBI">
+                                <span>SBI</span>
+                            </button>
+                            <button class="payment-option" data-payment="hdfc">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/2560px-HDFC_Bank_Logo.svg.png" alt="HDFC">
+                                <span>HDFC</span>
+                            </button>
+                            <button class="payment-option" data-payment="icici">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/2560px-ICICI_Bank_Logo.svg.png" alt="ICICI">
+                                <span>ICICI</span>
+                            </button>
+                            <button class="payment-option" data-payment="axis">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Axis_Bank_logo.svg/2560px-Axis_Bank_logo.svg.png" alt="Axis">
+                                <span>Axis</span>
+                            </button>
+                        </div>
+                        <div class="card-form netbanking-form" style="display: none; margin-top: 20px;">
+                            <div class="form-group">
+                                <label for="accountNumber">Account Number</label>
+                                <input type="text" id="accountNumber" placeholder="Enter Account Number" maxlength="18">
+                            </div>
+                            <div class="form-group">
+                                <label for="ifsc">IFSC Code</label>
+                                <input type="text" id="ifsc" placeholder="Enter IFSC Code" maxlength="11">
+                            </div>
+                            <div class="form-group">
+                                <label for="accountHolder">Account Holder Name</label>
+                                <input type="text" id="accountHolder" placeholder="Enter Account Holder Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="branchName">Branch Name</label>
+                                <input type="text" id="branchName" placeholder="Enter Branch Name">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EMI Options -->
+                    <div class="payment-category">
+                        <h4>EMI Options</h4>
+                        <p class="emi-note">Available on orders above ₹3000</p>
+                        <div class="emi-options">
+                            <select class="emi-select" disabled>
+                                <option value="">Select EMI Option</option>
+                                <option value="3">3 Months EMI</option>
+                                <option value="6">6 Months EMI</option>
+                                <option value="9">9 Months EMI</option>
+                                <option value="12">12 Months EMI</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Security Info -->
+                    <div class="security-info">
+                        <div class="security-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>100% Secure Payments</span>
+                        </div>
+                        <div class="security-badge">
+                            <i class="fas fa-lock"></i>
+                            <span>End-to-end Encryption</span>
+                        </div>
+                        <div class="security-badge">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Verified by Visa/Mastercard</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Place Order Button -->
+                <button class="place-order-btn">Place Order</button>
+            </div>
+        </div>
+
+        <!-- QR Code Modal -->
+        <div class="modal" id="qrCodeModal">
+            <div class="modal-content qr-code">
+                <span class="close-modal">&times;</span>
+                <h2>Scan QR Code to Pay</h2>
+                <div class="qr-container">
+                    <div id="qrCode">
+                        <img src="Screenshot 2025-06-12 103501.png" alt="UPI QR Code" class="static-qr">
+                    </div>
+                    <p class="amount-display">Amount: <span id="qrAmount">₹0</span></p>
+                    <div class="payment-status">
+                        <div class="status-message">Waiting for payment...</div>
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+                <div class="qr-instructions">
+                    <p>1. Open your UPI app</p>
+                    <p>2. Scan the QR code</p>
+                    <p>3. Complete the payment</p>
+                    <p>4. Wait for confirmation</p>
+                </div>
+                <button class="cancel-payment">Cancel Payment</button>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div class="modal success-modal" id="successModal">
+            <div class="modal-content success">
+                <span class="close-modal">&times;</span>
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Order Placed Successfully!</h2>
+                <p>Your order has been confirmed. You will receive a confirmation email shortly.</p>
+                
+                <div class="order-details">
+                    <div class="detail-row">
+                        <span class="label">Customer Name:</span>
+                        <span class="value" id="customerName"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Date & Time:</span>
+                        <span class="value" id="orderDateTime"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Payment Method:</span>
+                        <span class="value" id="paymentMethod"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Amount:</span>
+                        <span class="value" id="receiptAmount"></span>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="track-btn">Track Order</button>
+                    <button class="continue-btn">Continue Shopping</button>
+                    <button class="print-receipt-btn">Print Receipt</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Information -->
+        <section class="additional-info">
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>100% Secure Payments</h3>
+                    <p>All payment transactions are encrypted and secure</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-truck"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Free shipping on orders above ₹499</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-undo"></i>
+                    <h3>Easy Returns</h3>
+                    <p>10-day return policy on all items</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Get help anytime via chat or phone</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Manga Hub</h3>
+                <p>Your ultimate destination for premium manga and manhwa content. Read, collect, and enjoy your favorite series.</p>
+            </div>
+            <!-- ... other footer sections ... -->
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Manga Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/payment.js"></script>
+    <script src="js/cursor-effect.js"></script>
+</body>
+</html> 
