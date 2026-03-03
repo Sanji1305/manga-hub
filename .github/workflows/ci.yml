@@ -1,4 +1,4 @@
-name: CI
+﻿name: CI
 
 on:
   push:
@@ -18,23 +18,12 @@ jobs:
       - name: Check required files exist
         run: |
           echo "Checking required files..."
-          if [ ! -f "index.html" ]; then
-            echo "❌ index.html is missing!"
-            exit 1
-          fi
-          if [ ! -f "Dockerfile" ]; then
-            echo "❌ Dockerfile is missing!"
-            exit 1
-          fi
-          if [ ! -f ".autoflow.yml" ] && [ ! -f ".autoflow.yaml" ]; then
-            echo "❌ .autoflow.yml config is missing!"
-            exit 1
-          fi
-          echo "✅ All required files present."
+          [ -f "index.html" ]     || { echo " index.html missing";     exit 1; }
+          [ -f "Dockerfile" ]     || { echo " Dockerfile missing";     exit 1; }
+          [ -f ".autoflow.yml" ] || [ -f ".autoflow.yaml" ] || { echo " .autoflow.yml missing"; exit 1; }
+          echo " All required files present."
 
-      - name: Check for broken internal links
+      - name: Count HTML files
         run: |
-          echo "Scanning HTML files for obvious issues..."
-          html_files=$(find . -name "*.html" -not -path "./.git/*" | wc -l)
-          echo "Found $html_files HTML file(s)."
-          echo "✅ Static validation passed."
+          count=$(find . -name "*.html" -not -path "./.git/*" | wc -l)
+          echo " Found $count HTML file(s). Static validation passed."
