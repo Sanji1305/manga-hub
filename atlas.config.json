@@ -1,0 +1,12 @@
+{
+  "projectType": "static",
+  "targetDomain": "ngo",
+  "startupTimeout": 30000,
+  "recordingEnabled": true,
+  "debugMode": false,
+  "disabledTabs": [
+    "links",
+    "storage",
+    "application"
+  ]
+}

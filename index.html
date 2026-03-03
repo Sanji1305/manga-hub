@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MangaHub</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section hero-bg-index">
+      <div class="hero-overlay"></div>
+      <div class="container text-center text-white py-5">
+        <h1 class="hero-title mb-3" id="hero-title">
+          Read. Collect. Celebrate Anime.
+        </h1>
+        <p class="hero-subtext mb-4" id="hero-subtext">
+          Your one-stop manga e-book & merchandise platform
+        </p>
+        <a href="/E-Books Library.html" class="btn hero-cta" id="hero-btn"
+          >Explore Manga</a
+        >
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      class="about-animeverse d-flex align-items-center justify-content-center"
+      style="min-height: 75vh"
+    >
+      <div class="container">
+        <div class="row align-items-center g-4 flex-md-row flex-column-reverse">
+          <div class="col-md-6 text-center text-md-start">
+            <h2 class="anime-about-title mb-3">
+              About <span class="anime-highlight">MangaHub</span>
+            </h2>
+            <p class="anime-about-desc mb-4">
+              MangaHub is your one-stop platform to
+              <b>read manga e-books</b> and
+              <b>shop for exclusive anime merchandise</b>.<br />
+              <span class="anime-highlight">Our mission:</span> Bring the best
+              of manga & anime culture to fans across India and beyond.<br />
+              <span style="color: #b31217; font-weight: 600"
+                >Explore new stories, collect your favorite figures, and join
+                the animeverse!</span
+              >
+            </p>
+            <ul class="list-unstyled mb-4 anime-about-list">
+              <li class="mb-2">
+                <i class="bi bi-book-half about-icon text-info me-2"></i>
+                <span>Digital Manga Library</span>
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-bag-heart about-icon text-danger me-2"></i>
+                <span>Anime Merchandise Store</span>
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-people about-icon text-success me-2"></i>
+                <span>Community & Events</span>
+              </li>
+            </ul>
+            <p class="small text-muted">
+              Developed by Chirag Parmar | Frontend Developer & Anime Enthusiast
+            </p>
+          </div>
+          <div class="col-md-6 text-center mb-4 mb-md-0">
+            <img
+              src="/images/hero2.jpg"
+              alt="About MangaHub"
+              class="about-anime-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending/Popular Manga Grid -->
+    <section class="trending-manga-grid container">
+      <h2 class="section-title mb-4">Trending Manga</h2>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="trending-card-pro">
+            <div class="trending-img-wrap">
+              <img
+                src="/images/hero2.jpg"
+                alt="Demon Slayer"
+                class="trending-img-pro"
+              />
+              <span class="trending-rating-badge">4.9 ★</span>
+            </div>
+            <div class="trending-title-pro">Demon Slayer</div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="trending-card-pro">
+            <div class="trending-img-wrap">
+              <img
+                src="/images/hero1.jpg"
+                alt="One Piece"
+                class="trending-img-pro"
+              />
+              <span class="trending-rating-badge">4.8 ★</span>
+            </div>
+            <div class="trending-title-pro">One Piece</div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="trending-card-pro">
+            <div class="trending-img-wrap">
+              <img
+                src="/images/hero3.jpg"
+                alt="Jujutsu Kaisen"
+                class="trending-img-pro"
+              />
+              <span class="trending-rating-badge">4.7 ★</span>
+            </div>
+            <div class="trending-title-pro">Jujutsu Kaisen</div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="trending-card-pro">
+            <div class="trending-img-wrap">
+              <img
+                src="/images/hero2.jpg"
+                alt="Solo Leveling"
+                class="trending-img-pro"
+              />
+              <span class="trending-rating-badge">4.9 ★</span>
+            </div>
+            <div class="trending-title-pro">Solo Leveling</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events / Virtual Meetups -->
+    <section class="anime-events container mb-5">
+      <h2 class="section-title mb-4">Upcoming Events & Meetups</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="event-card">
+            <div class="event-title">Anime Quiz Night</div>
+            <div class="event-date">15 June 2024</div>
+            <div class="event-desc">
+              Join our virtual quiz and win anime goodies!
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="event-card">
+            <div class="event-title">Manga Drawing Workshop</div>
+            <div class="event-date">22 June 2024</div>
+            <div class="event-desc">
+              Learn to draw your favorite manga characters live.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Manga Showcase -->
+    <section class="featured-manga-showcase container">
+      <h2 class="section-title mb-4">Featured Manga</h2>
+      <div class="row g-4">
+        <!-- Main Featured Manga -->
+        <div class="col-lg-6">
+          <div
+            class="featured-manga-main position-relative js-featured-main"
+            data-manga="1"
+            data-title="Attack on Titan"
+            data-genre="Action, Drama"
+            data-img="/images/hero2.jpg"
+            data-link="/E-Books Library.html"
+          >
+            <span class="ranking-badge">#1</span>
+            <img
+              src="/images/hero2.jpg"
+              alt="Attack on Titan"
+              class="featured-manga-img-main"
+            />
+            <div class="featured-manga-info-main">
+              <span class="featured-badge">Top Rated</span>
+              <h3 class="featured-manga-title-main">Attack on Titan</h3>
+              <div class="featured-manga-genre">Action, Drama</div>
+              <a
+                href="/E-Books Library.html"
+                class="btn featured-manga-btn js-main-btn"
+                >Read Sample</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Side Manga Cards: 2x2 grid -->
+        <div class="col-lg-6">
+          <div class="row g-4">
+            <div class="col-12 col-md-6">
+              <div
+                class="featured-manga-side position-relative js-featured-side"
+                data-manga="2"
+                data-title="Demon Slayer"
+                data-genre="Adventure, Fantasy"
+                data-img="/images/hero3.jpg"
+                data-link="/E-Books Library.html"
+              >
+                <span class="ranking-badge">#2</span>
+                <img
+                  src="/images/hero3.jpg"
+                  alt="Demon Slayer"
+                  class="featured-manga-img-side"
+                />
+                <div class="featured-manga-info-side">
+                  <h4 class="featured-manga-title-side">Demon Slayer</h4>
+                  <div class="featured-manga-genre">Adventure, Fantasy</div>
+                  <a
+                    href="/E-Books Library.html"
+                    class="btn featured-manga-btn js-side-btn"
+                    >Read Sample</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div
+                class="featured-manga-side position-relative js-featured-side"
+                data-manga="3"
+                data-title="One Piece"
+                data-genre="Adventure, Comedy"
+                data-img="/images/hero1.jpg"
+                data-link="/E-Books Library.html"
+              >
+                <span class="ranking-badge">#3</span>
+                <img
+                  src="/images/hero1.jpg"
+                  alt="One Piece"
+                  class="featured-manga-img-side"
+                />
+                <div class="featured-manga-info-side">
+                  <h4 class="featured-manga-title-side">One Piece</h4>
+                  <div class="featured-manga-genre">Adventure, Comedy</div>
+                  <a
+                    href="/E-Books Library.html"
+                    class="btn featured-manga-btn js-side-btn"
+                    >Read Sample</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div
+                class="featured-manga-side position-relative js-featured-side"
+                data-manga="4"
+                data-title="Jujutsu Kaisen"
+                data-genre="Supernatural, Action"
+                data-img="/images/hero2.jpg"
+                data-link="/E-Books Library.html"
+              >
+                <span class="ranking-badge">#4</span>
+                <img
+                  src="/images/hero2.jpg"
+                  alt="Jujutsu Kaisen"
+                  class="featured-manga-img-side"
+                />
+                <div class="featured-manga-info-side">
+                  <h4 class="featured-manga-title-side">Jujutsu Kaisen</h4>
+                  <div class="featured-manga-genre">Supernatural, Action</div>
+                  <a
+                    href="/E-Books Library.html"
+                    class="btn featured-manga-btn js-side-btn"
+                    >Read Sample</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div
+                class="featured-manga-side position-relative js-featured-side"
+                data-manga="5"
+                data-title="Solo Leveling"
+                data-genre="Action, Fantasy"
+                data-img="/images/hero1.jpg"
+                data-link="/E-Books Library.html"
+              >
+                <span class="ranking-badge">#5</span>
+                <img
+                  src="/images/hero1.jpg"
+                  alt="Solo Leveling"
+                  class="featured-manga-img-side"
+                />
+                <div class="featured-manga-info-side">
+                  <h4 class="featured-manga-title-side">Solo Leveling</h4>
+                  <div class="featured-manga-genre">Action, Fantasy</div>
+                  <a
+                    href="/E-Books Library.html"
+                    class="btn featured-manga-btn js-side-btn"
+                    >Read Sample</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-5 bg-light" id="testimonial-slider-3x1">
+      <div class="container">
+        <h2 class="section-title mb-5">What Our Clients Say</h2>
+
+        <div
+          id="testimonialCarousel_3x1"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="row g-4">
+                <!-- Testimonial 1 -->
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <img
+                      src="/images/hero1.jpg"
+                      class="rounded-circle mx-auto mb-3"
+                      alt="Client 1"
+                    />
+                    <p class="fst-italic">
+                      "Amazing work by Fusion Tech, their platform helped me
+                      grow my career!"
+                    </p>
+                    <h6 class="fw-bold mb-0">Rahul Mehta</h6>
+                    <small class="text-muted">Developer, India</small>
+                  </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <img
+                      src="/images/hero2.jpg"
+                      class="rounded-circle mx-auto mb-3"
+                      alt="Client 2"
+                    />
+                    <p class="fst-italic">
+                      "Best internship-style training ever. Very practical and
+                      useful."
+                    </p>
+                    <h6 class="fw-bold mb-0">Ananya Sharma</h6>
+                    <small class="text-muted">Manager, Delhi</small>
+                  </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <img
+                      src="/images/hero3.jpg"
+                      class="rounded-circle mx-auto mb-3"
+                      alt="Client 3"
+                    />
+                    <p class="fst-italic">
+                      "The UI/UX tasks really helped me level up my skills."
+                    </p>
+                    <h6 class="fw-bold mb-0">Priya Nair</h6>
+                    <small class="text-muted">Designer, Bangalore</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="row g-4">
+                <!-- Testimonial 4 -->
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <img
+                      src="/images/hero1.jpg"
+                      class="rounded-circle mx-auto mb-3"
+                      alt="Client 4"
+                    />
+                    <p class="fst-italic">
+                      "Fusion Tech's mentors are top-notch. Highly recommended."
+                    </p>
+                    <h6 class="fw-bold mb-0">Ravi Patel</h6>
+                    <small class="text-muted">Frontend Dev, Mumbai</small>
+                  </div>
+                </div>
+                <!-- Testimonial 5 -->
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <img
+                      src="/images/hero2.jpg"
+                      class="rounded-circle mx-auto mb-3"
+                      alt="Client 5"
+                    />
+                    <p class="fst-italic">
+                      "Hands-on tasks made all the difference. Learned by
+                      doing!"
+                    </p>
+                    <h6 class="fw-bold mb-0">Sneha Rathi</h6>
+                    <small class="text-muted">Student, Pune</small>
+                  </div>
+                </div>
+                <!-- Testimonial 6 -->
+                <div class="col-md-4">
+                  <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <img
+                      src="/images/hero3.jpg"
+                      class="rounded-circle mx-auto mb-3"
+                      alt="Client 6"
+                    />
+                    <p class="fst-italic">
+                      "Project structure and guidance were absolutely amazing."
+                    </p>
+                    <h6 class="fw-bold mb-0">Kunal Verma</h6>
+                    <small class="text-muted">Backend Dev, Jaipur</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel_3x1"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon bg-dark rounded-circle"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel_3x1"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon bg-dark rounded-circle"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Merchandise Preview -->
+    <section class="merch-preview bg-dark text-light py-5">
+      <div class="container">
+        <h2 class="section-title mb-4">Popular Merchandise</h2>
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 bg-dark text-light border-0">
+              <img
+                src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                class="card-img-top rounded-4"
+                alt="Action Figure"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Eren Yeager Figure</h5>
+                <p class="card-text small">₹1,499</p>
+                <a href="/Cart.html" class="btn hero-cta-dark btn-sm"
+                  >Add to Cart</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 bg-dark text-light border-0">
+              <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                class="card-img-top rounded-4"
+                alt="Poster"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Demon Slayer Poster</h5>
+                <p class="card-text small">₹299</p>
+                <a href="/Cart.html" class="btn hero-cta-dark btn-sm"
+                  >Add to Cart</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 bg-dark text-light border-0">
+              <img
+                src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                class="card-img-top rounded-4"
+                alt="Soft Toy"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Chibi Plush Toy</h5>
+                <p class="card-text small">₹799</p>
+                <a href="/Cart.html" class="btn hero-cta-dark btn-sm"
+                  >Add to Cart</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 bg-dark text-light border-0">
+              <img
+                src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                class="card-img-top rounded-4"
+                alt="Keychain"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Anime Keychain</h5>
+                <p class="card-text small">₹199</p>
+                <a href="/Cart.html" class="btn hero-cta-dark btn-sm"
+                  >Add to Cart</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anime News / Blog Section -->
+    <section class="anime-news container mb-5">
+      <h2 class="section-title mb-4">Anime News & Blog</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="news-card">
+            <div class="news-title">Solo Leveling Anime Announced!</div>
+            <div class="news-date">10 June 2024</div>
+            <div class="news-desc">
+              The much-awaited Solo Leveling anime is coming this fall. Get
+              ready!
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="news-card">
+            <div class="news-title">MangaHub Community Hits 10K Members</div>
+            <div class="news-date">5 June 2024</div>
+            <div class="news-desc">
+              Thank you for your support! Join our Discord for more fun.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="news-card">
+            <div class="news-title">New Merchandise Drop: Chibi Plushies</div>
+            <div class="news-date">1 June 2024</div>
+            <div class="news-desc">
+              Check out our latest collection of adorable chibi plush toys.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="anime-faq container mb-5">
+      <h2 class="section-title mb-4">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item bg-dark text-light border-0">
+          <h2 class="accordion-header" id="faq1">
+            <button
+              class="accordion-button bg-dark text-light"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse1"
+              aria-expanded="true"
+              aria-controls="collapse1"
+            >
+              How do I read manga on MangaHub?
+            </button>
+          </h2>
+          <div
+            id="collapse1"
+            class="accordion-collapse collapse show"
+            aria-labelledby="faq1"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Just sign up, browse the library, and start reading instantly!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-dark text-light border-0">
+          <h2 class="accordion-header" id="faq2">
+            <button
+              class="accordion-button bg-dark text-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2"
+              aria-expanded="false"
+              aria-controls="collapse2"
+            >
+              How can I join events or the community?
+            </button>
+          </h2>
+          <div
+            id="collapse2"
+            class="accordion-collapse collapse"
+            aria-labelledby="faq2"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Check the Events section or join our Discord for updates!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-dark text-light border-0">
+          <h2 class="accordion-header" id="faq3">
+            <button
+              class="accordion-button bg-dark text-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3"
+              aria-expanded="false"
+              aria-controls="collapse3"
+            >
+              Is the merchandise original and how do I order?
+            </button>
+          </h2>
+          <div
+            id="collapse3"
+            class="accordion-collapse collapse"
+            aria-labelledby="faq3"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Yes, all products are official and you can order directly from the
+              Store section.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us-section container mb-5">
+      <div
+        class="row g-4 align-items-stretch justify-content-center"
+        style="min-height: 400px"
+      >
+        <!-- Image Side -->
+        <div class="col-lg-5 d-none d-lg-flex align-items-stretch">
+          <div
+            class="w-100 h-100 d-flex align-items-center justify-content-center"
+            style="min-height: 400px"
+          >
+            <img
+              src="/images/hero3.jpg"
+              alt="Contact MangaHub"
+              class="img-fluid rounded-4 shadow-lg contact-anime-img"
+              style="
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                min-height: 400px;
+                max-height: 500px;
+              "
+            />
+          </div>
+        </div>
+        <!-- Form Side -->
+        <div class="col-lg-7 d-flex align-items-stretch">
+          <div
+            class="bg-dark text-light p-4 rounded-4 shadow-lg w-100 d-flex flex-column justify-content-center h-100"
+            style="min-height: 400px"
+          >
+            <h2 class="section-title mb-2">Contact Us</h2>
+            <p class="mb-4" style="color: #ffb88c; font-weight: 500">
+              Have a question, feedback, or just want to say hi? Fill out the
+              form and our team will get back to you soon!
+            </p>
+            <form>
+              <div class="mb-3">
+                <label for="contactName" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contactName"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="contactEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="contactEmail"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="contactMessage" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="contactMessage"
+                  rows="4"
+                  placeholder="Type your message here..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn hero-cta-dark w-100 mt-2">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top-btn" title="Back to Top">
+      ↑
+    </button>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS Bundle (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS to fetch and insert navbar/footer -->
+    <script src="/js/script.js"></script>
+    <script>
+      // Dynamically load navbar and footer
+      fetch("/components/navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+        });
+      fetch("/components/footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>

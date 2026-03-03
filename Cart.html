@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MangaHub | Shopping Cart</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <style>
+      .cart-page {
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        min-height: 100vh;
+        padding: 2rem 0;
+      }
+
+      .cart-header {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .cart-item-card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 1rem;
+      }
+
+      .cart-item-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .product-image {
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .product-image:hover {
+        transform: scale(1.05);
+      }
+
+      .quantity-controls {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 25px;
+        padding: 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .quantity-btn {
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .quantity-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+      }
+
+      .quantity-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .cart-summary-card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: sticky;
+        top: 2rem;
+      }
+
+      .summary-item {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1rem 0;
+      }
+
+      .summary-item:last-child {
+        border-bottom: none;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .coupon-section {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .coupon-input {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        border-radius: 8px;
+      }
+
+      .coupon-input:focus {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.4);
+        color: white;
+        box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1);
+      }
+
+      .coupon-input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .btn-apply-coupon {
+        background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-apply-coupon:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      .btn-checkout {
+        background: linear-gradient(45deg, #11998e 0%, #38ef7d 100%);
+        border: none;
+        border-radius: 10px;
+        padding: 1rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .btn-checkout:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(17, 153, 142, 0.4);
+      }
+
+      .empty-cart {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 3rem;
+        text-align: center;
+      }
+
+      .empty-cart-icon {
+        font-size: 4rem;
+        color: rgba(255, 255, 255, 0.3);
+        margin-bottom: 1rem;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-action {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        border-radius: 6px;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .btn-action:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        transform: translateY(-1px);
+      }
+
+      .btn-remove {
+        background: rgba(220, 53, 69, 0.2);
+        border-color: rgba(220, 53, 69, 0.3);
+      }
+
+      .btn-remove:hover {
+        background: rgba(220, 53, 69, 0.3);
+      }
+
+      .btn-save {
+        background: rgba(13, 110, 253, 0.2);
+        border-color: rgba(13, 110, 253, 0.3);
+      }
+
+      .btn-save:hover {
+        background: rgba(13, 110, 253, 0.3);
+      }
+
+      .price-tag {
+        background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .total-price {
+        background: linear-gradient(45deg, #11998e, #38ef7d);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .product-type-badge {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .saved-items-section {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        margin-top: 2rem;
+      }
+
+      .section-title {
+        color: white;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .section-title i {
+        color: #667eea;
+      }
+
+      .text-muted {
+        color: rgba(255, 255, 255, 0.7) !important;
+      }
+
+      .text-white {
+        color: white !important;
+      }
+
+      .shipping-info {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-left: 4px solid #28a745;
+      }
+
+      .security-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        margin-top: 1rem;
+      }
+
+      .security-badge i {
+        color: #28a745;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Cart Section -->
+    <section
+      class="cart-page mb-0"
+      style="position: relative; min-height: 100vh; background: none"
+    >
+      <div style="position: absolute; inset: 0; z-index: 0">
+        <img
+          src="images/hero2.jpg"
+          alt="background"
+          style="
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.25;
+            filter: blur(1px);
+          "
+        />
+        <div
+          style="
+            position: absolute;
+            inset: 0;
+            background: rgba(24, 26, 27, 0.85);
+          "
+        ></div>
+      </div>
+      <div class="container position-relative" style="z-index: 1">
+        <!-- Cart Header -->
+        <div class="cart-header text-center">
+          <h1 class="text-white fw-bold mb-2">
+            <i class="bi bi-cart3 me-2"></i>Shopping Cart
+          </h1>
+          <p class="text-muted mb-0">
+            Review your items and proceed to checkout
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Cart Items -->
+          <div class="col-lg-8">
+            <div id="cartContent"></div>
+            <!-- Recommended Products Section -->
+            <div id="recommendedSection" class="mt-4">
+              <h5 class="text-white fw-bold mb-3">
+                <i class="bi bi-stars me-2"></i>You May Also Like
+              </h5>
+              <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-3">
+                  <div class="card bg-dark text-white h-100 border-0 shadow-sm">
+                    <img
+                      src="images/hero1.jpg"
+                      class="card-img-top"
+                      alt="Naruto Vol.1"
+                      style="
+                        height: 140px;
+                        object-fit: cover;
+                        border-radius: 8px 8px 0 0;
+                      "
+                    />
+                    <div class="card-body p-2">
+                      <div class="fw-semibold">Naruto Vol.1</div>
+                      <div class="small text-muted mb-2">Manga</div>
+                      <div class="fw-bold mb-2">₹299</div>
+                      <button class="btn btn-sm btn-success w-100">
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                  <div class="card bg-dark text-white h-100 border-0 shadow-sm">
+                    <img
+                      src="images/hero2.jpg"
+                      class="card-img-top"
+                      alt="One Piece Vol.1"
+                      style="
+                        height: 140px;
+                        object-fit: cover;
+                        border-radius: 8px 8px 0 0;
+                      "
+                    />
+                    <div class="card-body p-2">
+                      <div class="fw-semibold">One Piece Vol.1</div>
+                      <div class="small text-muted mb-2">Manga</div>
+                      <div class="fw-bold mb-2">₹349</div>
+                      <button class="btn btn-sm btn-success w-100">
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                  <div class="card bg-dark text-white h-100 border-0 shadow-sm">
+                    <img
+                      src="images/hero3.jpg"
+                      class="card-img-top"
+                      alt="Attack on Titan"
+                      style="
+                        height: 140px;
+                        object-fit: cover;
+                        border-radius: 8px 8px 0 0;
+                      "
+                    />
+                    <div class="card-body p-2">
+                      <div class="fw-semibold">Attack on Titan</div>
+                      <div class="small text-muted mb-2">E-Book</div>
+                      <div class="fw-bold mb-2">₹199</div>
+                      <button class="btn btn-sm btn-success w-100">
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 d-none d-md-block">
+                  <div class="card bg-dark text-white h-100 border-0 shadow-sm">
+                    <img
+                      src="images/hero1.jpg"
+                      class="card-img-top"
+                      alt="Demon Slayer"
+                      style="
+                        height: 140px;
+                        object-fit: cover;
+                        border-radius: 8px 8px 0 0;
+                      "
+                    />
+                    <div class="card-body p-2">
+                      <div class="fw-semibold">Demon Slayer</div>
+                      <div class="small text-muted mb-2">Manga</div>
+                      <div class="fw-bold mb-2">₹259</div>
+                      <button class="btn btn-sm btn-success w-100">
+                        Add to Cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Saved for Later Section -->
+            <div
+              id="saveForLaterSection"
+              class="saved-items-section"
+              style="display: none"
+            >
+              <h5 class="section-title">
+                <i class="bi bi-bookmark-heart"></i>Saved for Later
+              </h5>
+              <div id="saveForLaterContent"></div>
+            </div>
+          </div>
+
+          <!-- Cart Summary -->
+          <div class="col-lg-4">
+            <div
+              class="card shadow-lg border-0 cart-summary-card"
+              id="cartSummaryCard"
+              style="display: none; background: rgba(30, 34, 40, 0.95)"
+            >
+              <div class="card-body p-4">
+                <h5 class="card-title text-white fw-bold mb-4">
+                  <i class="bi bi-receipt me-2"></i>Order Summary
+                </h5>
+                <ul
+                  class="list-group list-group-flush mb-4"
+                  id="cartSummaryList"
+                ></ul>
+                <!-- Shipping Info -->
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-truck text-success"></i>
+                  <span class="text-white fw-semibold">Free Shipping</span>
+                </div>
+                <small class="text-muted mb-3 d-block"
+                  >Estimated delivery: 3-5 business days</small
+                >
+                <hr
+                  class="my-3"
+                  style="border-color: rgba(255, 255, 255, 0.08)"
+                />
+                <!-- Coupon Section -->
+                <div class="mb-3">
+                  <h6
+                    class="text-white fw-semibold mb-2"
+                    style="font-family: 'Manga', cursive"
+                  >
+                    <i class="bi bi-tag me-2"></i>Have a Coupon?
+                  </h6>
+                  <div class="input-group mb-2">
+                    <input
+                      type="text"
+                      class="form-control coupon-input"
+                      placeholder="Enter coupon code"
+                      id="couponInput"
+                    />
+                    <button class="btn btn-apply-coupon" id="applyCouponBtn">
+                      Apply
+                    </button>
+                  </div>
+                  <div id="couponMsg" class="small"></div>
+                </div>
+                <hr
+                  class="my-3"
+                  style="border-color: rgba(255, 255, 255, 0.08)"
+                />
+                <!-- Checkout Button -->
+                <a href="/Checkout.html" class="btn btn-checkout w-100 mb-3">
+                  <i class="bi bi-lock me-2"></i>Secure Checkout
+                </a>
+                <!-- Security Badge -->
+                <div class="security-badge text-center mt-2">
+                  <i class="bi bi-shield-check"></i>
+                  <span>100% Secure Payment</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS Bundle (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+      function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const cartCountEls = document.querySelectorAll(".cart-count");
+        cartCountEls.forEach((el) => (el.textContent = count > 0 ? count : ""));
+      }
+
+      function updateCartCountLS() {
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        localStorage.setItem("cartCount", count);
+        if (typeof updateCartBadge === "function") updateCartBadge();
+      }
+
+      function formatPrice(price) {
+        return new Intl.NumberFormat("en-IN", {
+          style: "currency",
+          currency: "INR",
+          minimumFractionDigits: 0,
+        }).format(price);
+      }
+
+      // Recommended products data (static for now)
+      const recommendedProducts = [
+        {
+          id: "rec1",
+          title: "Naruto Vol.1",
+          price: 299,
+          image: "images/hero1.jpg",
+          type: "Manga",
+        },
+        {
+          id: "rec2",
+          title: "One Piece Vol.1",
+          price: 349,
+          image: "images/hero2.jpg",
+          type: "Manga",
+        },
+        {
+          id: "rec3",
+          title: "Attack on Titan",
+          price: 199,
+          image: "images/hero3.jpg",
+          type: "E-Book",
+        },
+        {
+          id: "rec4",
+          title: "Demon Slayer",
+          price: 259,
+          image: "images/hero1.jpg",
+          type: "Manga",
+        },
+      ];
+
+      function attachRecommendedAddToCart() {
+        // Remove previous listeners by cloning buttons
+        document
+          .querySelectorAll("#recommendedSection .btn-success")
+          .forEach((btn, idx) => {
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+          });
+        // Now add listeners only once
+        document
+          .querySelectorAll("#recommendedSection .btn-success")
+          .forEach((btn, idx) => {
+            btn.addEventListener("click", function () {
+              const prod = recommendedProducts[idx];
+              let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+              const foundIdx = cart.findIndex(
+                (item) => item.title === prod.title && item.type === prod.type
+              );
+              if (foundIdx !== -1) {
+                cart[foundIdx].quantity += 1;
+              } else {
+                cart.push({ ...prod, quantity: 1 });
+              }
+              localStorage.setItem("cart", JSON.stringify(cart));
+              updateCartCountLS();
+              renderCart();
+            });
+          });
+      }
+
+      function renderCart() {
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const cartContent = document.getElementById("cartContent");
+        const cartSummaryCard = document.getElementById("cartSummaryCard");
+        const cartSummaryList = document.getElementById("cartSummaryList");
+        const saveForLaterSection = document.getElementById(
+          "saveForLaterSection"
+        );
+        const saveForLaterContent = document.getElementById(
+          "saveForLaterContent"
+        );
+        const saveForLater = JSON.parse(
+          localStorage.getItem("saveForLater") || "[]"
+        );
+
+        if (!cart.length) {
+          cartContent.innerHTML = `
+            <div class="empty-cart">
+              <div class="empty-cart-icon">
+                <i class="bi bi-cart-x"></i>
+              </div>
+              <h4 class="text-white mb-3">Your cart is empty</h4>
+              <p class="text-muted mb-4">Looks like you haven't added any items to your cart yet.</p>
+              <div class="action-buttons justify-content-center">
+                <a href="/Product Store.html" class="btn-action">
+                  <i class="bi bi-shop me-2"></i>Continue Shopping
+                </a>
+                <a href="/E-Books Library.html" class="btn-action">
+                  <i class="bi bi-book me-2"></i>Browse E-Books
+                </a>
+              </div>
+            </div>`;
+          cartSummaryCard.style.display = "none";
+        } else {
+          let total = 0;
+          let subtotal = 0;
+          let shipping = 0;
+          let tax = 0;
+
+          let html = `<div class="row g-3">`;
+          cart.forEach((item, idx) => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+
+            html += `
+              <div class="col-12">
+                <div class="cart-item-card p-4">
+                  <div class="row align-items-center">
+                    <div class="col-md-2 col-4 mb-3 mb-md-0">
+                      <img src="${item.image}" alt="${
+              item.title
+            }" class="img-fluid product-image" style="width: 100%; height: 120px; object-fit: cover;"/>
+                    </div>
+                    <div class="col-md-6 col-8 mb-3 mb-md-0">
+                      <h6 class="text-white fw-bold mb-2">${item.title}</h6>
+                      <div class="mb-2">
+                        <span class="product-type-badge">${item.type}</span>
+                      </div>
+                      <div class="mb-3">
+                        <span class="price-tag">${formatPrice(
+                          item.price
+                        )}</span>
+                      </div>
+                      <div class="action-buttons">
+                        <button class="btn-action btn-remove remove-cart-item" data-idx="${idx}">
+                          <i class="bi bi-trash me-1"></i>Remove
+                        </button>
+                        <button class="btn-action btn-save save-for-later-btn" data-idx="${idx}">
+                          <i class="bi bi-bookmark me-1"></i>Save for Later
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                      <div class="quantity-controls mb-3">
+                        <button class="quantity-btn qty-btn" data-idx="${idx}" data-action="dec" ${
+              item.quantity <= 1 ? "disabled" : ""
+            }>
+                          <i class="bi bi-dash"></i>
+                        </button>
+                        <span class="text-white fw-bold mx-3">${
+                          item.quantity
+                        }</span>
+                        <button class="quantity-btn qty-btn" data-idx="${idx}" data-action="inc">
+                          <i class="bi bi-plus"></i>
+                        </button>
+                      </div>
+                      <div class="total-price">
+                        ${formatPrice(itemTotal)}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>`;
+          });
+          html += `</div>`;
+          cartContent.innerHTML = html;
+
+          // Calculate totals
+          shipping = subtotal > 500 ? 0 : 50; // Free shipping over ₹500
+          tax = subtotal * 0.18; // 18% GST
+          total = subtotal + shipping + tax;
+
+          // Cart Summary
+          cartSummaryCard.style.display = "block";
+          cartSummaryList.innerHTML = `
+            <li class="summary-item d-flex justify-content-between align-items-center">
+              <span class="text-muted">Subtotal (${cart.length} items)</span>
+              <span class="text-white">${formatPrice(subtotal)}</span>
+            </li>
+            <li class="summary-item d-flex justify-content-between align-items-center">
+              <span class="text-muted">Shipping</span>
+              <span class="text-white">${
+                shipping === 0 ? "Free" : formatPrice(shipping)
+              }</span>
+            </li>
+            <li class="summary-item d-flex justify-content-between align-items-center">
+              <span class="text-muted">Tax (GST 18%)</span>
+              <span class="text-white">${formatPrice(tax)}</span>
+            </li>
+            <li class="summary-item d-flex justify-content-between align-items-center">
+              <span class="text-white fw-bold">Total</span>
+              <span class="total-price">${formatPrice(total)}</span>
+            </li>
+          `;
+        }
+
+        // Save for Later Section
+        if (saveForLater.length) {
+          saveForLaterSection.style.display = "block";
+          let html = `<div class="row g-3">`;
+          saveForLater.forEach((item, idx) => {
+            html += `
+              <div class="col-12">
+                <div class="cart-item-card p-3">
+                  <div class="row align-items-center">
+                    <div class="col-md-2 col-4 mb-3 mb-md-0">
+                      <img src="${item.image}" alt="${
+              item.title
+            }" class="img-fluid product-image" style="width: 100%; height: 80px; object-fit: cover;"/>
+                    </div>
+                    <div class="col-md-8 col-8 mb-3 mb-md-0">
+                      <h6 class="text-white fw-bold mb-1">${item.title}</h6>
+                      <div class="mb-2">
+                        <span class="product-type-badge">${item.type}</span>
+                      </div>
+                      <div class="mb-2">
+                        <span class="price-tag">${formatPrice(
+                          item.price
+                        )}</span>
+                      </div>
+                    </div>
+                    <div class="col-md-2 text-md-end">
+                      <button class="btn-action btn-save move-to-cart-btn" data-idx="${idx}">
+                        <i class="bi bi-cart-plus me-1"></i>Move to Cart
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>`;
+          });
+          html += `</div>`;
+          saveForLaterContent.innerHTML = html;
+        } else {
+          saveForLaterSection.style.display = "none";
+        }
+
+        updateCartCount();
+        attachEventListeners();
+        attachRecommendedAddToCart(); // Attach recommended Add to Cart events
+      }
+
+      function attachEventListeners() {
+        // Quantity buttons
+        document.querySelectorAll(".qty-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const idx = parseInt(this.dataset.idx);
+            const action = this.dataset.action;
+            let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+            if (action === "inc") {
+              cart[idx].quantity++;
+            } else if (action === "dec" && cart[idx].quantity > 1) {
+              cart[idx].quantity--;
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCountLS();
+            renderCart();
+          });
+        });
+
+        // Remove item
+        document.querySelectorAll(".remove-cart-item").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const idx = parseInt(this.dataset.idx);
+            let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+            cart.splice(idx, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCountLS();
+            renderCart();
+          });
+        });
+
+        // Save for later
+        document.querySelectorAll(".save-for-later-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const idx = parseInt(this.dataset.idx);
+            let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+            let saveForLater = JSON.parse(
+              localStorage.getItem("saveForLater") || "[]"
+            );
+            saveForLater.push(cart[idx]);
+            cart.splice(idx, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            localStorage.setItem("saveForLater", JSON.stringify(saveForLater));
+            updateCartCountLS();
+            renderCart();
+          });
+        });
+
+        // Move to cart
+        document.querySelectorAll(".move-to-cart-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const idx = parseInt(this.dataset.idx);
+            let saveForLater = JSON.parse(
+              localStorage.getItem("saveForLater") || "[]"
+            );
+            let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+            cart.push(saveForLater[idx]);
+            saveForLater.splice(idx, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            localStorage.setItem("saveForLater", JSON.stringify(saveForLater));
+            updateCartCountLS();
+            renderCart();
+          });
+        });
+
+        // Coupon functionality
+        const applyCouponBtn = document.getElementById("applyCouponBtn");
+        const couponInput = document.getElementById("couponInput");
+        const couponMsg = document.getElementById("couponMsg");
+
+        if (applyCouponBtn) {
+          applyCouponBtn.addEventListener("click", function () {
+            const input = couponInput.value.trim().toUpperCase();
+
+            if (!input) {
+              couponMsg.textContent = "Please enter a coupon code.";
+              couponMsg.className = "small text-danger mt-1";
+              return;
+            }
+
+            // Sample coupon codes
+            const validCoupons = {
+              WELCOME10: 10,
+              SAVE20: 20,
+              MANGA15: 15,
+              FREESHIP: "free_shipping",
+            };
+
+            if (validCoupons[input]) {
+              const discount = validCoupons[input];
+              if (typeof discount === "number") {
+                couponMsg.textContent = `Coupon applied! ${discount}% discount added.`;
+                couponMsg.className = "small text-success mt-1";
+              } else {
+                couponMsg.textContent = "Free shipping coupon applied!";
+                couponMsg.className = "small text-success mt-1";
+              }
+              couponInput.disabled = true;
+              applyCouponBtn.disabled = true;
+            } else {
+              couponMsg.textContent =
+                "Invalid coupon code. Try WELCOME10, SAVE20, MANGA15, or FREESHIP";
+              couponMsg.className = "small text-danger mt-1";
+            }
+          });
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", renderCart);
+    </script>
+  </body>
+</html>

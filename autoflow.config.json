@@ -1,0 +1,8 @@
+{
+  "projectName": "mangahub",
+  "gitRepo": "https://github.com/Sanji1305/manga-hub.git",
+  "domain": "mangahub.chirag-dev.online",
+  "appType": "static",
+  "deploymentType": "docker",
+  "mode": "domain"
+}

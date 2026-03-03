@@ -1,0 +1,1758 @@
+:root {
+  --mh-primary: #ff7e5f;
+  --mh-secondary: #fcb69f;
+  --mh-accent: #ffb88c;
+  --mh-bg-light: #fff3e6;
+  --mh-bg-gradient: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%);
+  --mh-gradient-cta: linear-gradient(90deg, #ffb88c 0%, #ff7e5f 100%);
+  --mh-gradient-cta-hover: linear-gradient(90deg, #ff7e5f 0%, #ffb88c 100%);
+  --mh-text-dark: #333;
+  --mh-text-light: #fff;
+  --mh-shadow: 0 2px 16px rgba(255, 126, 95, 0.08);
+  --mh-shadow-card: 0 2px 12px rgba(255, 126, 95, 0.12);
+}
+
+body,
+.bg-light {
+  background: #181a1b !important;
+  color: #f3f3f3;
+  font-family: "Montserrat", Arial, sans-serif;
+  padding-top: 70px;
+}
+.about-home,
+.featured-manga,
+.merch-preview,
+.cta-newsletter,
+.card,
+.about-animeverse {
+  background: #18181b !important;
+  color: #f3f3f3 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.card,
+.about-animeverse,
+.about-anime-img,
+.about-home-img {
+  box-shadow: none !important;
+}
+.card-title,
+.home-section-title,
+.anime-about-title {
+  color: #fff !important;
+}
+.card-text,
+.anime-about-desc,
+.anime-about-list,
+.small,
+.text-muted {
+  color: #d1d1d1 !important;
+}
+.hero-cta-dark {
+  background: linear-gradient(90deg, #b31217 0%, #18181b 100%);
+  color: #fff;
+  border: 2px solid #b31217;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: none !important;
+}
+.hero-cta-dark:hover,
+.hero-cta-dark:focus {
+  background: linear-gradient(90deg, #18181b 0%, #b31217 100%);
+  color: #fff;
+  border: 2px solid #fff;
+}
+input.form-control,
+textarea.form-control {
+  background: #23272a;
+  color: #fff;
+  border: 1px solid #444;
+}
+.card-img-top,
+.about-anime-img,
+.about-home-img {
+  box-shadow: none !important;
+}
+/* Remove border-radius if you want more flat look */
+.card-img-top,
+.about-anime-img,
+.about-home-img {
+  border-radius: 1.2rem !important;
+}
+
+.navbar-custom {
+  background: var(--mh-bg-gradient);
+  box-shadow: var(--mh-shadow);
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  width: 100vw;
+}
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  transition: transform 0.2s;
+}
+.navbar-brand:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+.navbar-nav .nav-link {
+  font-family: "Orbitron", "Montserrat", Arial, sans-serif !important;
+  color: #fff !important;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 0.5rem 1.1rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  border-radius: 4px;
+  background: transparent !important;
+  position: relative;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 2px;
+  background: linear-gradient(90deg, #fff 0%, #b31217 100%);
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0.5);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 2px;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffee00 !important;
+  background: transparent !important;
+}
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px var(--mh-accent);
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(24, 24, 27, 0.7) 100%
+    ),
+    url("https://svgshare.com/i/13kz.svg"); /* subtle sparkles */
+  background-size: cover, 200px;
+  background-repeat: repeat;
+  z-index: 1;
+}
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 4px 24px #b3121755, 0 1px 0 #000;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero-subtext {
+  font-size: 1.25rem;
+  color: var(--mh-text-light);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero-cta {
+  background: linear-gradient(90deg, #b31217 0%, #18181b 100%);
+  color: #fff;
+  border: 2px solid #b31217;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: none !important;
+  padding: 0.8rem 2.5rem;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s,
+    box-shadow 0.2s;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero-cta:hover,
+.hero-cta:focus {
+  background: linear-gradient(90deg, #18181b 0%, #b31217 100%);
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0 0 16px #b31217cc;
+  transform: scale(1.07);
+}
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-section {
+    min-height: 50vh;
+  }
+}
+
+/* Hero Section Backgrounds */
+.hero-bg-index {
+  background-image: url("/images/hero1.jpg");
+  min-height: 80vh;
+}
+.hero-bg-ebooks {
+  background-image: url("/images/hero2.jpg");
+  min-height: 40vh;
+}
+.hero-bg-store {
+  background-image: url("/images/hero3.jpg");
+  min-height: 40vh;
+}
+
+/* About Image Styling */
+.about-img {
+  max-height: 340px;
+  object-fit: cover;
+}
+
+/* Homepage About Section */
+.about-home {
+  background: var(--mh-bg-light);
+  border-radius: 1.5rem;
+  box-shadow: var(--mh-shadow);
+  padding: 2.5rem 2rem;
+  margin-bottom: 3rem;
+}
+.about-home-img {
+  max-width: 100%;
+  border-radius: 1rem;
+  box-shadow: var(--mh-shadow-card);
+}
+
+/* Section Titles & Subtext */
+.home-section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+.home-section-subtext {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Featured Manga & Merchandise Preview */
+.featured-manga {
+  margin-bottom: 3rem;
+}
+.merch-preview {
+  margin-bottom: 3rem;
+}
+
+/* Newsletter/CTA */
+.cta-newsletter {
+  background: var(--mh-bg-gradient);
+  border-radius: 1.5rem;
+  box-shadow: var(--mh-shadow);
+  padding: 2.5rem 2rem;
+  margin-bottom: 0;
+}
+
+/* --- Anime Navbar Styles (Red+Black) --- */
+.anime-navbar {
+  background: linear-gradient(
+    90deg,
+    rgba(24, 24, 27, 0.95) 0%,
+    rgba(179, 18, 23, 0.95) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 2px solid #b31217;
+  font-family: "Montserrat", "Orbitron", Arial, sans-serif;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  width: 100vw;
+}
+.anime-brand {
+  font-family: "Orbitron", "Montserrat", Arial, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 2px 8px #b3121799, 0 1px 0 #000;
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0 0 8px #b31217cc);
+}
+.anime-logo {
+  border: 2.5px solid #b31217;
+  background: #222;
+  box-shadow: 0 2px 8px #b3121755;
+  margin-right: 0.5rem;
+}
+.anime-title {
+  font-family: "Orbitron", "Montserrat", Arial, sans-serif;
+  font-weight: 700;
+  color: #b31217;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #b3121799, 0 1px 0 #fff;
+}
+.anime-link {
+  position: relative;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 1.08rem;
+  color: #fff !important;
+  transition: color 0.2s, text-shadow 0.2s;
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: transparent !important;
+}
+.anime-link:hover,
+.anime-link.active {
+  color: #b31217 !important;
+  text-shadow: 0 2px 8px #b3121799, 0 1px 0 #fff;
+  background: #222222cc;
+}
+.anime-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 3px;
+  background: linear-gradient(90deg, #fff 0%, #b31217 100%);
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0.5);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.anime-link.active::after,
+.anime-link:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+.anime-cart-icon {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  font-size: 1.25rem;
+}
+.anime-link:hover .anime-cart-icon,
+.anime-link.active .anime-cart-icon {
+  filter: drop-shadow(0 4px 8px #b31217);
+}
+.anime-cart-badge {
+  font-size: 0.95rem;
+  padding: 0.25em 0.6em;
+  top: 6px !important;
+  right: 0px !important;
+  left: auto !important;
+  transform: translate(40%, -40%) !important;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(179, 18, 23, 0.18);
+}
+@media (max-width: 600px) {
+  .anime-cart-badge {
+    font-size: 0.85rem;
+    top: 2px !important;
+    right: 2px !important;
+    transform: translate(50%, -50%) !important;
+    min-width: 20px;
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+  }
+}
+@media (max-width: 991px) {
+  .anime-navbar {
+    padding: 0.5rem 0.5rem;
+  }
+  .anime-brand {
+    font-size: 1.3rem;
+  }
+  .anime-link {
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem;
+  }
+}
+/* --- End Anime Navbar Styles (Red+Black) --- */
+
+/* --- Animeverse About Us Section --- */
+.about-animeverse {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #232526;
+  margin-bottom: 3rem;
+  padding: 2.5rem 0.5rem;
+  border: none !important;
+}
+.anime-about-title {
+  font-family: "Orbitron", "Montserrat", Arial, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 4px 24px #b3121755, 0 1px 0 #000;
+  margin-bottom: 1.2rem;
+}
+.anime-highlight {
+  color: #b31217;
+  text-shadow: 0 2px 8px #fff2, 0 1px 0 #fff;
+}
+.anime-about-desc {
+  font-size: 1.25rem;
+  color: #f3f3f3;
+  font-weight: 500;
+  text-shadow: 0 2px 8px #0005;
+  margin-bottom: 1.5rem;
+}
+.anime-about-list {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.about-icon {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  filter: drop-shadow(0 2px 8px #b3121755);
+}
+.about-anime-img {
+  max-width: 95%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+  border: 3px solid #b31217;
+  background: #18181b;
+  transition: transform 0.3s, border 0.3s;
+  margin-top: 1rem;
+}
+.about-anime-img:hover {
+  transform: scale(1.05) rotate(2deg);
+  border: 3px solid #fff;
+}
+@media (max-width: 991px) {
+  .about-animeverse {
+    min-height: 60vh;
+    padding: 2rem 0.5rem;
+  }
+  .anime-about-title {
+    font-size: 2rem;
+  }
+  .about-anime-img {
+    height: 220px;
+  }
+}
+/* --- End Animeverse About Us Section --- */
+
+/* Cards - Glassmorphism/Border */
+.card,
+.about-animeverse,
+.about-anime-img,
+.about-home-img {
+  box-shadow: none !important;
+}
+.card {
+  background: #23272a !important;
+  border: 1.5px solid #23272a !important;
+  border-radius: 1.2rem !important;
+  color: #f3f3f3 !important;
+  transition: transform 0.2s, border 0.2s, background 0.2s;
+}
+.card:hover {
+  transform: scale(1.03);
+  border: 1.5px solid #b31217 !important;
+  background: rgba(36, 36, 40, 0.95) !important;
+}
+.card-title,
+.home-section-title,
+.anime-about-title {
+  color: #fff !important;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.card-text,
+.anime-about-desc,
+.anime-about-list,
+.small,
+.text-muted {
+  color: #d1d1d1 !important;
+}
+.card-img-top,
+.about-anime-img,
+.about-home-img {
+  box-shadow: none !important;
+  border-radius: 1.2rem !important;
+}
+
+/* Buttons */
+.hero-cta-dark,
+.btn,
+.btn-primary,
+.btn-outline-primary,
+.btn-success,
+.btn-outline-success {
+  background: linear-gradient(90deg, #b31217 0%, #18181b 100%) !important;
+  color: #fff !important;
+  border: 2px solid #b31217 !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+}
+.hero-cta-dark:hover,
+.btn:hover,
+.btn:focus {
+  background: linear-gradient(90deg, #18181b 0%, #b31217 100%) !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+  transform: scale(1.05);
+}
+
+/* Section Spacing */
+section {
+  margin-bottom: 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* Footer */
+footer {
+  background: #232526 !important;
+  color: #fff !important;
+  border-top: 2px solid #b31217;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+footer a {
+  color: #fff !important;
+  text-decoration: none;
+  transition: text-decoration 0.2s, color 0.2s;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: #b31217 !important;
+}
+footer .fw-bold,
+footer h5,
+footer h6 {
+  color: #fff !important;
+  font-weight: 700;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 991px) {
+  .about-animeverse {
+    min-height: 60vh;
+    padding: 2rem 0.5rem;
+  }
+  .anime-about-title {
+    font-size: 2rem;
+  }
+  .about-anime-img {
+    height: 220px;
+  }
+  .card {
+    border-radius: 0.8rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .anime-about-title {
+    font-size: 1.3rem;
+  }
+  .about-anime-img {
+    height: 120px;
+  }
+}
+/* --- End Animeverse UI Upgrade --- */
+
+/* --- Animeverse New Components --- */
+
+.section-title {
+  font-family: "Orbitron", "Montserrat", Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 8px #b3121755;
+}
+
+/* Trending Manga Carousel */
+.trending-manga-carousel {
+  background: transparent;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.carousel-wrapper {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #b31217 #232526;
+}
+.trending-card {
+  min-width: 180px;
+  background: rgba(36, 36, 40, 0.85);
+  border: 2px solid #b31217;
+  border-radius: 1.2rem;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0.5rem 0.7rem 0.5rem;
+  transition: border 0.2s, transform 0.2s;
+}
+.trending-card:hover {
+  border: 2px solid #fff;
+  transform: scale(1.05);
+}
+.trending-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.trending-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+.trending-rating {
+  color: #ffd700;
+  font-size: 1rem;
+}
+
+/* Events / Meetups */
+.anime-events {
+  background: transparent;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.event-card {
+  background: rgba(36, 36, 40, 0.85);
+  border: 2px solid #b31217;
+  border-radius: 1.2rem;
+  color: #fff;
+  padding: 1.2rem 1rem;
+  margin-bottom: 1rem;
+  transition: border 0.2s, transform 0.2s;
+}
+.event-card:hover {
+  border: 2px solid #fff;
+  transform: scale(1.03);
+}
+.event-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #b31217;
+}
+.event-date {
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.event-desc {
+  color: #d1d1d1;
+  font-size: 1rem;
+}
+
+/* Reviews / Testimonials */
+.anime-reviews {
+  background: transparent;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.review-card {
+  background: rgba(36, 36, 40, 0.85);
+  border: 2px solid #b31217;
+  border-radius: 1.2rem;
+  color: #fff;
+  padding: 1.2rem 1rem;
+  min-height: 140px;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  transition: border 0.2s, transform 0.2s;
+}
+.review-card:hover {
+  border: 2px solid #fff;
+  transform: scale(1.03);
+}
+.review-text {
+  font-style: italic;
+  margin-bottom: 0.7rem;
+}
+.review-user {
+  color: #b31217;
+  font-weight: 600;
+}
+
+/* News / Blog */
+.anime-news {
+  background: transparent;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.news-card {
+  background: rgba(36, 36, 40, 0.85);
+  border: 2px solid #b31217;
+  border-radius: 1.2rem;
+  color: #fff;
+  padding: 1.2rem 1rem;
+  min-height: 140px;
+  margin-bottom: 1rem;
+  transition: border 0.2s, transform 0.2s;
+}
+.news-card:hover {
+  border: 2px solid #fff;
+  transform: scale(1.03);
+}
+.news-title {
+  font-weight: 700;
+  color: #b31217;
+  font-size: 1.1rem;
+}
+.news-date {
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.news-desc {
+  color: #d1d1d1;
+  font-size: 1rem;
+}
+
+/* Newsletter Graphic */
+.anime-newsletter .newsletter-graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.newsletter-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #b31217;
+  margin-bottom: 0.5rem;
+}
+
+/* FAQ Section */
+.anime-faq {
+  background: transparent;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.accordion-item {
+  background: rgba(36, 36, 40, 0.85) !important;
+  border: 2px solid #b31217 !important;
+  border-radius: 1.2rem !important;
+  margin-bottom: 1rem;
+}
+.accordion-button {
+  background: #232526 !important;
+  color: #fff !important;
+  font-weight: 700;
+  border-radius: 1.2rem !important;
+  box-shadow: none !important;
+}
+.accordion-button:not(.collapsed) {
+  color: #b31217 !important;
+  background: #18181b !important;
+}
+.accordion-body {
+  color: #d1d1d1 !important;
+}
+
+/* Social Media / Discord */
+.anime-social {
+  background: transparent;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.discord-widget,
+.social-feed {
+  background: rgba(36, 36, 40, 0.85) !important;
+  border: 2px solid #b31217 !important;
+  border-radius: 1.2rem !important;
+  color: #fff !important;
+  min-height: 200px;
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  background: linear-gradient(90deg, #b31217 0%, #18181b 100%);
+  color: #fff;
+  border: 2px solid #b31217;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  font-weight: 900;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+}
+.back-to-top-btn:hover {
+  background: linear-gradient(90deg, #18181b 0%, #b31217 100%);
+  color: #fff;
+  border: 2px solid #fff;
+  transform: scale(1.1);
+}
+
+@media (max-width: 991px) {
+  .trending-card,
+  .event-card,
+  .review-card,
+  .news-card {
+    min-width: 140px;
+    font-size: 0.95rem;
+    padding: 0.8rem 0.5rem;
+  }
+  .trending-img {
+    height: 80px;
+  }
+  .newsletter-img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.2rem;
+  }
+  .back-to-top-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+/* --- End Animeverse New Components --- */
+
+/* --- Trending Manga Professional Grid --- */
+.trending-manga-grid {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.trending-card-pro {
+  background: rgba(36, 36, 40, 0.95);
+  border: 1.5px solid #2d2d2d;
+  border-radius: 1.2rem;
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 0.7rem 1rem 0.7rem;
+  position: relative;
+  transition: border 0.2s, transform 0.2s, background 0.2s;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.trending-card-pro:hover {
+  border: 1.5px solid #b31217;
+  background: rgba(36, 36, 40, 1);
+  transform: scale(1.04);
+}
+.trending-img-wrap {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.7rem;
+}
+.trending-img-pro {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  box-shadow: none;
+}
+.trending-rating-badge {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: linear-gradient(90deg, #b31217 0%, #18181b 100%);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  padding: 0.2rem 0.7rem;
+  border: 1.5px solid #fff;
+  z-index: 2;
+  box-shadow: none;
+}
+.trending-title-pro {
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  color: #fff;
+  font-family: "Orbitron", "Montserrat", Arial, sans-serif;
+  letter-spacing: 1px;
+}
+@media (max-width: 991px) {
+  .trending-img-pro {
+    height: 100px;
+  }
+  .trending-card-pro {
+    min-height: 180px;
+    padding: 0.7rem 0.3rem 0.7rem 0.3rem;
+  }
+}
+@media (max-width: 600px) {
+  .trending-title-pro {
+    font-size: 1rem;
+  }
+  .trending-img-pro {
+    height: 80px;
+  }
+}
+/* --- End Trending Manga Professional Grid --- */
+
+/* Section Title Polish */
+.section-title {
+  font-family: "Orbitron", "Montserrat", Arial, sans-serif;
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-align: left;
+  border-left: 5px solid #b31217;
+  padding-left: 1rem;
+  text-shadow: 0 2px 8px #b3121755;
+}
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid #b31217;
+  }
+}
+/* Section Spacing */
+section {
+  margin-bottom: 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* --- Manga Custom Font --- */
+@font-face {
+  font-family: "Manga";
+  src: url("/fonts/Manga-4vx6.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manga";
+  src: url("/fonts/MangaBold-0rEo.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manga";
+  src: url("/fonts/MangaItalic-Eemz.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Manga";
+  src: url("/fonts/MangaBoldItalic-eY7g.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Manga Hollow";
+  src: url("/fonts/MangaHollow-WaD4.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Manga Hollow";
+  src: url("/fonts/MangaHollowItalic-a1Ko.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Apply Manga font to headings, logo, section titles, trending titles */
+.anime-brand,
+.anime-title,
+.section-title,
+.anime-about-title,
+.trending-title-pro,
+.home-section-title,
+.card-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Manga", "Orbitron", "Montserrat", Arial, sans-serif !important;
+  letter-spacing: 1.5px;
+}
+
+body,
+.anime-about-desc,
+.anime-about-list,
+.card-text,
+.review-text,
+.event-desc,
+.news-desc,
+.accordion-body,
+.footer,
+.small,
+.text-muted {
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+/* --- Featured Manga Showcase Grid --- */
+.featured-manga-showcase {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.featured-manga-main {
+  background: rgba(36, 36, 40, 0.98);
+  border: 2px solid #b31217;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  min-height: 370px;
+  transition: border 0.2s, transform 0.2s;
+}
+.featured-manga-main:hover {
+  border: 2px solid #fff;
+  transform: scale(1.02);
+}
+.featured-manga-img-main {
+  width: 100%;
+  aspect-ratio: 2/1.1;
+  height: 51vh;
+  object-fit: cover;
+  border-radius: 1.5rem 1.5rem 0 0;
+  display: block;
+}
+.featured-manga-info-main {
+  padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(24, 24, 27, 0) 0%,
+    rgba(24, 24, 27, 0.95) 100%
+  );
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+.featured-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #b31217 0%, #18181b 100%);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  padding: 0.2rem 0.9rem;
+  border: 1.5px solid #fff;
+  margin-bottom: 0.7rem;
+}
+.featured-manga-title-main {
+  font-family: "Manga", "Orbitron", "Montserrat", Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.3rem;
+  letter-spacing: 1.5px;
+}
+.featured-manga-genre {
+  color: #ffd700;
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+.featured-manga-btn {
+  background: linear-gradient(90deg, #b31217 0%, #18181b 100%) !important;
+  color: #fff !important;
+  border: 2px solid #b31217 !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.1rem;
+}
+.featured-manga-btn:hover {
+  background: linear-gradient(90deg, #18181b 0%, #b31217 100%) !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+  transform: scale(1.05);
+}
+
+/* Side Cards */
+.featured-manga-side {
+  background: rgba(36, 36, 40, 0.95);
+  border: 2px solid #2d2d2d;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  height: 180px;
+  min-height: 140px;
+  max-height: 220px;
+  transition: border 0.2s, transform 0.2s;
+}
+.featured-manga-side:hover {
+  border: 2px solid #b31217;
+  transform: scale(1.03);
+}
+.featured-manga-img-side {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  border-radius: 1.2rem 1.2rem 0 0;
+  display: block;
+}
+.featured-manga-info-side {
+  padding: 0.8rem 1.2rem 1.1rem 1.2rem;
+  background: linear-gradient(
+    180deg,
+    rgba(24, 24, 27, 0) 0%,
+    rgba(24, 24, 27, 0.95) 100%
+  );
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0 0 1.2rem 1.2rem;
+}
+.featured-manga-title-side {
+  font-family: "Manga", "Orbitron", "Montserrat", Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
+}
+@media (max-width: 991px) {
+  .featured-manga-side {
+    height: 120px;
+    min-height: 80px;
+    max-height: 140px;
+  }
+  .featured-manga-img-side {
+    aspect-ratio: 2/1;
+  }
+  .featured-manga-img-main {
+    aspect-ratio: 2/1.1;
+  }
+}
+@media (max-width: 600px) {
+  .featured-manga-side,
+  .featured-manga-main {
+    height: auto;
+    min-height: unset;
+    max-height: unset;
+    margin-bottom: 1rem;
+  }
+  .featured-manga-img-side,
+  .featured-manga-img-main {
+    aspect-ratio: 2/1;
+    width: 100%;
+    height: auto;
+  }
+}
+/* --- End Featured Manga Showcase Grid --- */
+
+/* --- Responsive Fix for Featured Manga Showcase --- */
+.featured-manga-main,
+.featured-manga-side {
+  overflow: hidden;
+}
+@media (max-width: 991px) {
+  .featured-manga-showcase .row {
+    flex-direction: column !important;
+  }
+  .featured-manga-main,
+  .featured-manga-side {
+    min-height: unset;
+    height: auto;
+    margin-bottom: 1.2rem;
+  }
+  .featured-manga-img-main,
+  .featured-manga-img-side {
+    height: 120px;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .featured-manga-info-main,
+  .featured-manga-info-side {
+    position: static;
+    border-radius: 0 0 1.5rem 1.5rem;
+    padding: 1rem;
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(24, 24, 27, 0) 0%,
+      rgba(24, 24, 27, 0.95) 100%
+    );
+  }
+}
+@media (max-width: 600px) {
+  .featured-manga-main,
+  .featured-manga-side {
+    min-height: unset;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .featured-manga-img-main,
+  .featured-manga-img-side {
+    height: 80px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .featured-manga-info-main,
+  .featured-manga-info-side {
+    padding: 0.7rem;
+  }
+}
+/* --- End Responsive Fix --- */
+
+/* --- Ranking Badge for Featured Manga --- */
+.ranking-badge {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  z-index: 3;
+  background: linear-gradient(90deg, #b31217 0%, #18181b 100%);
+  color: #fff;
+  font-family: "Manga", "Orbitron", "Montserrat", Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 900;
+  border-radius: 50px;
+  padding: 0.18em 0.85em 0.18em 0.85em;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px #b3121755;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+@media (max-width: 991px) {
+  .ranking-badge {
+    font-size: 0.9rem;
+    top: 8px;
+    left: 10px;
+    padding: 0.12em 0.7em 0.12em 0.7em;
+  }
+}
+@media (max-width: 600px) {
+  .ranking-badge {
+    font-size: 0.8rem;
+    top: 6px;
+    left: 7px;
+    padding: 0.09em 0.5em 0.09em 0.5em;
+  }
+}
+/* --- End Ranking Badge --- */
+
+/* --- Featured Manga Swap Animations --- */
+.fade-swap {
+  transition: opacity 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+.fade-in {
+  opacity: 1 !important;
+  transform: scale(1.02);
+}
+.fade-out {
+  opacity: 0 !important;
+  transform: scale(0.98);
+}
+.side-swap-animate {
+  animation: sideSwapScale 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes sideSwapScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* --- End Featured Manga Swap Animations --- */
+
+/* --- Hide right side featured manga buttons by default --- */
+.js-side-btn {
+  display: none !important;
+}
+.js-main-btn {
+  display: inline-block !important;
+}
+
+/* --- Owl Carousel Testimonial Custom Styles --- */
+.anime-reviews .owl-carousel .review-card {
+  background: rgba(36, 36, 40, 0.97);
+  border: 2px solid #b31217;
+  border-radius: 1.2rem;
+  color: #fff;
+  min-height: 170px;
+  box-shadow: 0 4px 24px #b3121711;
+  font-family: "Montserrat", Arial, sans-serif;
+  margin: 0 0.5rem;
+  transition: border 0.2s, box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+.anime-reviews .owl-carousel .review-card:hover {
+  border: 2px solid #fff;
+  box-shadow: 0 6px 32px #b3121722;
+  transform: scale(1.03);
+}
+.anime-reviews .review-text {
+  font-size: 1.08rem;
+  font-style: italic;
+  margin-bottom: 0.7rem;
+  color: #fff;
+}
+.anime-reviews .review-user {
+  color: #b31217;
+  font-weight: 700;
+  font-family: "Manga", "Orbitron", "Montserrat", Arial, sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+}
+.anime-reviews .owl-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+.anime-reviews .owl-nav button.owl-prev,
+.anime-reviews .owl-nav button.owl-next {
+  background: linear-gradient(90deg, #b31217 0%, #18181b 100%);
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  transition: background 0.2s, border 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px #b3121755;
+  margin: 0 8px;
+}
+.anime-reviews .owl-nav button.owl-prev:hover,
+.anime-reviews .owl-nav button.owl-next:hover {
+  background: #fff;
+  color: #b31217;
+  border: 2px solid #b31217;
+  transform: scale(1.12);
+}
+.anime-reviews .owl-nav button span {
+  font-size: 2rem;
+  line-height: 1;
+}
+.anime-reviews .owl-dots {
+  text-align: center;
+  margin-top: 1.2rem;
+}
+.anime-reviews .owl-dot {
+  width: 14px;
+  height: 14px;
+  background: #232526;
+  border: 2px solid #b31217;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 6px;
+  transition: background 0.2s, border 0.2s;
+}
+.anime-reviews .owl-dot.active,
+.anime-reviews .owl-dot:hover {
+  background: #b31217;
+  border: 2px solid #fff;
+}
+@media (max-width: 991px) {
+  .anime-reviews .owl-carousel .review-card {
+    min-height: 120px;
+    font-size: 0.98rem;
+    padding: 1.1rem 0.7rem;
+  }
+  .anime-reviews .owl-nav button.owl-prev,
+  .anime-reviews .owl-nav button.owl-next {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 600px) {
+  .anime-reviews .owl-carousel .review-card {
+    min-height: 90px;
+    font-size: 0.92rem;
+    padding: 0.7rem 0.3rem;
+  }
+  .anime-reviews .owl-nav button.owl-prev,
+  .anime-reviews .owl-nav button.owl-next {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+  .anime-reviews .owl-dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+  }
+}
+/* --- End Owl Carousel Testimonial Custom Styles --- */
+
+/* --- Custom 3x1 Testimonial Carousel Styles --- */
+#testimonial-slider-3x1 {
+  background: #18181b !important;
+  color: #fff;
+  border-radius: 1.5rem;
+  margin-bottom: 3rem;
+  box-shadow: none;
+}
+#testimonial-slider-3x1 .section-title,
+#testimonial-slider-3x1 h2 {
+  color: #fff;
+  font-family: "Manga", "Orbitron", "Montserrat", Arial, sans-serif;
+  font-size: 2.3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  border-left: 5px solid #b31217;
+  padding-left: 1rem;
+  text-shadow: 0 2px 8px #b3121755;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+#testimonial-slider-3x1 .carousel-inner {
+  padding-bottom: 2.2rem;
+}
+#testimonial-slider-3x1 .card {
+  background: rgba(36, 36, 40, 0.97);
+  border: 2px solid #b31217;
+  border-radius: 1.2rem;
+  color: #fff;
+  box-shadow: 0 4px 24px #b3121711;
+  font-family: "Montserrat", Arial, sans-serif;
+  transition: border 0.2s, box-shadow 0.2s, transform 0.2s;
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+#testimonial-slider-3x1 .card:hover {
+  border: 2px solid #fff;
+  box-shadow: 0 6px 32px #b3121722;
+  transform: scale(1.03);
+}
+#testimonial-slider-3x1 .rounded-circle {
+  border: 2.5px solid #b31217;
+  box-shadow: 0 2px 8px #b3121755;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+#testimonial-slider-3x1 .fst-italic {
+  color: #fff;
+  font-size: 1.08rem;
+  font-style: italic;
+  margin-bottom: 0.7rem;
+}
+#testimonial-slider-3x1 .fw-bold {
+  color: #b31217;
+  font-family: "Manga", "Orbitron", "Montserrat", Arial, sans-serif;
+  font-weight: 900 !important;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+#testimonial-slider-3x1 small.text-muted {
+  color: #ffd700 !important;
+  font-size: 0.98rem;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+#testimonial-slider-3x1 .carousel-control-prev-icon,
+#testimonial-slider-3x1 .carousel-control-next-icon {
+  background-color: #b31217 !important;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 2px 8px #b3121755;
+  background-size: 60% 60%;
+}
+#testimonial-slider-3x1 .carousel-control-prev-icon:hover,
+#testimonial-slider-3x1 .carousel-control-next-icon:hover {
+  background-color: #fff !important;
+  border: 2px solid #b31217;
+}
+#testimonial-slider-3x1 .carousel-control-prev,
+#testimonial-slider-3x1 .carousel-control-next {
+  width: 5%;
+}
+#testimonial-slider-3x1 .carousel-control-prev {
+  left: -2.5rem;
+}
+#testimonial-slider-3x1 .carousel-control-next {
+  right: -2.5rem;
+}
+@media (max-width: 991px) {
+  #testimonial-slider-3x1 .card {
+    min-height: 180px;
+    font-size: 0.98rem;
+    padding: 1.1rem 0.7rem;
+  }
+  #testimonial-slider-3x1 .carousel-control-prev,
+  #testimonial-slider-3x1 .carousel-control-next {
+    width: 8%;
+  }
+  #testimonial-slider-3x1 .carousel-control-prev {
+    left: -1.2rem;
+  }
+  #testimonial-slider-3x1 .carousel-control-next {
+    right: -1.2rem;
+  }
+}
+@media (max-width: 600px) {
+  #testimonial-slider-3x1 .card {
+    min-height: 120px;
+    font-size: 0.92rem;
+    padding: 0.7rem 0.3rem;
+  }
+  #testimonial-slider-3x1 .carousel-control-prev,
+  #testimonial-slider-3x1 .carousel-control-next {
+    width: 12%;
+  }
+  #testimonial-slider-3x1 .carousel-control-prev {
+    left: -0.5rem;
+  }
+  #testimonial-slider-3x1 .carousel-control-next {
+    right: -0.5rem;
+  }
+  #testimonial-slider-3x1 .section-title,
+  #testimonial-slider-3x1 h2 {
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid #b31217;
+  }
+}
+/* --- End Custom 3x1 Testimonial Carousel Styles --- */
+
+/* Book Card Custom Styles */
+.card.h-100 {
+  background: #232323;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  border: none;
+  color: #fff;
+}
+.card-img-top {
+  border-radius: 14px 14px 0 0;
+  object-fit: cover;
+  height: 260px;
+  background: #181818;
+}
+.card-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+.card-footer {
+  background: transparent;
+  border: none;
+}
+.btn-primary,
+.btn-success {
+  border-radius: 8px;
+  font-weight: 600;
+}
+.btn-outline-light {
+  border-radius: 8px;
+  font-weight: 600;
+}
+.modal-content.bg-dark {
+  background: #181818 !important;
+}
+.modal-body img {
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Modal size customizations */
+.modal-xl {
+  max-width: calc(1140px + 20px) !important; /* Bootstrap modal-xl + 20px */
+}
+.modal-content.bg-dark {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 991.98px) {
+  .modal-xl {
+    max-width: 98vw !important;
+  }
+  .modal-content.bg-dark {
+    min-height: 70vh;
+  }
+}
+
+/* Modal Book Cover Full Edge-to-Edge */
+.modal-book-cover-full {
+  width: 100%;
+  height: 100vh;
+  min-height: 70vh;
+  object-fit: cover;
+  border-radius: 0 !important;
+  box-shadow: none;
+  margin: 0;
+  display: block;
+}
+.col-md-6.p-0.h-100 {
+  min-height: 70vh;
+  height: 100vh;
+  background: #181818;
+}
+/* Modal right section enhancements */
+.modal-content.bg-dark .col-md-6.p-4 {
+  min-height: 70vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.modal-content.bg-dark .badge {
+  font-size: 0.95rem;
+  padding: 0.5em 0.8em;
+  margin-bottom: 0.5em;
+}
+.modal-content.bg-dark hr {
+  margin: 1.2em 0;
+}
+.modal-content.bg-dark .border-secondary {
+  border-color: #444 !important;
+}
+@media (max-width: 991.98px) {
+  .modal-book-cover-full,
+  .col-md-6.p-0.h-100,
+  .modal-content.bg-dark .col-md-6.p-4 {
+    height: auto;
+    min-height: 40vh;
+  }
+}
+
+/* Remove extra bottom space in modal */
+.modal-content.bg-dark {
+  padding-bottom: 0 !important;
+}
+
+/* Modal close button responsive fix */
+.btn-close.position-absolute.top-0.end-0 {
+  z-index: 1056;
+  margin: 1.2rem 1.2rem 0 0;
+}
+@media (max-width: 575.98px) {
+  .btn-close.position-absolute.top-0.end-0 {
+    margin: 0.5rem 0.5rem 0 0;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* Product Store Filter Bar Custom Height */
+.card.position-sticky {
+  min-height: 420px;
+  background: rgba(36, 36, 40, 0.92) !important;
+  border: 1.5px solid #b31217 !important;
+  box-shadow: 0 2px 16px rgba(179, 18, 23, 0.1);
+}
+.card.position-sticky .form-label {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.card.position-sticky .form-control {
+  background: #232326;
+  color: #fff;
+  border: 1.5px solid #444;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+.card.position-sticky .btn-primary {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.card.position-sticky .form-control::placeholder {
+  color: #f1f1f1 !important;
+  opacity: 1;
+}
+
+/* Scrollbar for dark */
+::-webkit-scrollbar {
+  background: #23272a;
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+}

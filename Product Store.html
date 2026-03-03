@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MangaHub | Product Store</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero/Banner -->
+    <section class="hero-section hero-bg-store">
+      <div class="hero-overlay"></div>
+      <div class="container text-center text-white py-5">
+        <h1 class="hero-title mb-2">Anime Merchandise Store</h1>
+        <p class="hero-subtext">
+          Shop for exclusive anime figures, posters, plushies, and more!
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content: Filter Bar (30%) + Products (70%) -->
+    <section class="container mb-5">
+      <div class="row">
+        <!-- Filter Bar (Sticky/Fixed) -->
+        <aside class="col-md-4 col-lg-3 mb-4 mb-md-0">
+          <div
+            class="card p-3 position-sticky"
+            style="top: 90px; z-index: 2; min-height: 350px"
+          >
+            <h5 class="mb-3">Filters</h5>
+            <div class="mb-3">
+              <label class="form-label">Brand</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Brand name"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Color</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="e.g. Red, Blue, Black"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Category</label>
+              <select class="form-select">
+                <option>All</option>
+                <option>Figures</option>
+                <option>Posters</option>
+                <option>Plushies</option>
+                <option>Keychains</option>
+                <option>Apparel</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Price Range</label>
+              <div class="d-flex gap-2">
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Min"
+                  min="0"
+                  style="width: 45%"
+                />
+                <input
+                  type="number"
+                  class="form-control"
+                  placeholder="Max"
+                  min="0"
+                  style="width: 45%"
+                />
+              </div>
+            </div>
+            <button class="btn btn-primary w-100">Apply Filters</button>
+          </div>
+        </aside>
+        <!-- Products Grid (Scrollable) -->
+        <div class="col-md-8 col-lg-9">
+          <!-- Top Controls Row: Genre, Search, Sort By -->
+          <div class="row g-2 align-items-center mb-3 flex-wrap">
+            <div class="col-auto">
+              <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-outline-primary btn-sm genre-btn active">
+                  All
+                </button>
+                <button class="btn btn-outline-primary btn-sm genre-btn">
+                  Figures
+                </button>
+                <button class="btn btn-outline-primary btn-sm genre-btn">
+                  Posters
+                </button>
+                <button class="btn btn-outline-primary btn-sm genre-btn">
+                  Plushies
+                </button>
+                <button class="btn btn-outline-primary btn-sm genre-btn">
+                  Keychains
+                </button>
+                <button class="btn btn-outline-primary btn-sm genre-btn">
+                  Apparel
+                </button>
+              </div>
+            </div>
+            <div class="col" style="max-width: 320px">
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search products..."
+                  aria-label="Search"
+                  title="Search products"
+                />
+                <button class="btn btn-primary" type="submit" title="Search">
+                  <i class="bi bi-search"></i>
+                </button>
+              </form>
+            </div>
+            <div class="col-auto">
+              <select class="form-select w-auto" style="min-width: 150px">
+                <option selected disabled>Sort By</option>
+                <option>Popularity</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Newest</option>
+              </select>
+            </div>
+          </div>
+          <!-- No Products Found Message -->
+          <div
+            class="alert alert-warning text-center"
+            style="display: none"
+            id="noProductsMsg"
+          >
+            No products found for the selected filters.
+          </div>
+          <!-- Figures Category -->
+          <h5 class="mt-4 mb-3">Figures</h5>
+          <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-4"
+          >
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Eren Yeager Figure"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Eren Yeager Figure</h5>
+                  <p class="card-text small">₹1,499</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Eren Yeager Figure"
+                    data-price="1499"
+                    data-image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                    data-type="product"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Levi Ackerman Figure"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Levi Ackerman Figure</h5>
+                  <p class="card-text small">₹1,699</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Levi Ackerman Figure"
+                    data-price="1699"
+                    data-image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                    data-type="product"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Naruto Uzumaki Figure"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Naruto Uzumaki Figure</h5>
+                  <p class="card-text small">₹1,299</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Naruto Uzumaki Figure"
+                    data-price="1299"
+                    data-image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                    data-type="product"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Sasuke Uchiha Figure"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Sasuke Uchiha Figure</h5>
+                  <p class="card-text small">₹1,399</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Sasuke Uchiha Figure"
+                    data-price="1399"
+                    data-image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                    data-type="product"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Posters Category -->
+          <h5 class="mt-4 mb-3">Posters</h5>
+          <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-4"
+          >
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Demon Slayer Poster"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Demon Slayer Poster</h5>
+                  <p class="card-text small">₹299</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Demon Slayer Poster"
+                    data-price="299"
+                    data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    data-type="poster"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="One Piece Poster"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">One Piece Poster</h5>
+                  <p class="card-text small">₹349</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="One Piece Poster"
+                    data-price="349"
+                    data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    data-type="poster"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Naruto Poster"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Naruto Poster</h5>
+                  <p class="card-text small">₹299</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Naruto Poster"
+                    data-price="299"
+                    data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    data-type="poster"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Attack on Titan Poster"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Attack on Titan Poster</h5>
+                  <p class="card-text small">₹399</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Attack on Titan Poster"
+                    data-price="399"
+                    data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    data-type="poster"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Plushies Category -->
+          <h5 class="mt-4 mb-3">Plushies</h5>
+          <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-4"
+          >
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Chibi Plush Toy"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Chibi Plush Toy</h5>
+                  <p class="card-text small">₹799</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Chibi Plush Toy"
+                    data-price="799"
+                    data-image="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                    data-type="plushie"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Pikachu Plush"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Pikachu Plush</h5>
+                  <p class="card-text small">₹999</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Pikachu Plush"
+                    data-price="999"
+                    data-image="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                    data-type="plushie"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Totoro Plush"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Totoro Plush</h5>
+                  <p class="card-text small">₹899</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Totoro Plush"
+                    data-price="899"
+                    data-image="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                    data-type="plushie"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Sailor Moon Plush"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Sailor Moon Plush</h5>
+                  <p class="card-text small">₹849</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Sailor Moon Plush"
+                    data-price="849"
+                    data-image="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                    data-type="plushie"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Keychains Category -->
+          <h5 class="mt-4 mb-3">Keychains</h5>
+          <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-4"
+          >
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Anime Keychain"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Anime Keychain</h5>
+                  <p class="card-text small">₹199</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Anime Keychain"
+                    data-price="199"
+                    data-image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                    data-type="keychain"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Naruto Keychain"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Naruto Keychain</h5>
+                  <p class="card-text small">₹249</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Naruto Keychain"
+                    data-price="249"
+                    data-image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                    data-type="keychain"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="One Piece Keychain"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">One Piece Keychain</h5>
+                  <p class="card-text small">₹199</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="One Piece Keychain"
+                    data-price="199"
+                    data-image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                    data-type="keychain"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Attack on Titan Keychain"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Attack on Titan Keychain</h5>
+                  <p class="card-text small">₹299</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Attack on Titan Keychain"
+                    data-price="299"
+                    data-image="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                    data-type="keychain"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Apparel Category -->
+          <h5 class="mt-4 mb-3">Apparel</h5>
+          <div
+            class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-4"
+          >
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Naruto Hoodie"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Naruto Hoodie</h5>
+                  <p class="card-text small">₹1,199</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Naruto Hoodie"
+                    data-price="1199"
+                    data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    data-type="apparel"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="One Piece T-shirt"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">One Piece T-shirt</h5>
+                  <p class="card-text small">₹699</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="One Piece T-shirt"
+                    data-price="699"
+                    data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    data-type="apparel"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Demon Slayer Cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Demon Slayer Cap</h5>
+                  <p class="card-text small">₹399</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Demon Slayer Cap"
+                    data-price="399"
+                    data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    data-type="apparel"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                  class="card-img-top"
+                  alt="Sailor Moon Socks"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Sailor Moon Socks</h5>
+                  <p class="card-text small">₹249</p>
+                  <a
+                    href="#"
+                    class="btn btn-outline-success btn-sm add-to-cart-btn"
+                    data-title="Sailor Moon Socks"
+                    data-price="249"
+                    data-image="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    data-type="apparel"
+                    >Add to Cart</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Bootstrap JS Bundle (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+      // Add to Cart logic
+      function updateCartCountLS() {
+        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+        localStorage.setItem("cartCount", count);
+        if (typeof updateCartBadge === "function") updateCartBadge();
+      }
+
+      function addToCart(item) {
+        let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const idx = cart.findIndex(
+          (i) => i.title === item.title && i.type === item.type
+        );
+        if (idx > -1) {
+          cart[idx].quantity += 1;
+        } else {
+          cart.push({ ...item, quantity: 1 });
+        }
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCountLS();
+      }
+
+      document.querySelectorAll(".add-to-cart-btn").forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          const item = {
+            title: this.dataset.title,
+            price: parseFloat(this.dataset.price),
+            image: this.dataset.image,
+            type: this.dataset.type,
+          };
+          addToCart(item);
+          alert("Added to cart!");
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", updateCartCountLS);
+    </script>
+  </body>
+</html>
