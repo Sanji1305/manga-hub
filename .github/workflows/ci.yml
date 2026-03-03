@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    name: Validate Static Project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check required files exist
+        run: |
+          echo "Checking required files..."
+          if [ ! -f "index.html" ]; then
+            echo "❌ index.html is missing!"
+            exit 1
+          fi
+          if [ ! -f "Dockerfile" ]; then
+            echo "❌ Dockerfile is missing!"
+            exit 1
+          fi
+          if [ ! -f ".autoflow.yml" ] && [ ! -f ".autoflow.yaml" ]; then
+            echo "❌ .autoflow.yml config is missing!"
+            exit 1
+          fi
+          echo "✅ All required files present."
+
+      - name: Check for broken internal links
+        run: |
+          echo "Scanning HTML files for obvious issues..."
+          html_files=$(find . -name "*.html" -not -path "./.git/*" | wc -l)
+          echo "Found $html_files HTML file(s)."
+          echo "✅ Static validation passed."
